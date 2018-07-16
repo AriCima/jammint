@@ -1,6 +1,52 @@
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   font-family: sans-serif;
   box-sizing: border-box;
 }
+
+
+.jam-request-form{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: gray;
+
+  .form-item{
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid lightgray;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: red;
+
+    .form-item-title{
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+    }
+
+    .form-item-info{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: blue;
+
+      p{
+        margin: 0px;
+      }
+    }
+
+  }
+}
+
