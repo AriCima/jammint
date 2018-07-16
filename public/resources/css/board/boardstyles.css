@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px; }
+
+header {
+  width: 100%;
+  height: 10%; }
+  header nav {
+    height: 100%;
+    padding: 2% 0 2% 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: RGB(69, 135, 261); }
+    header nav .nav-left {
+      list-style-type: none;
+      height: 100%;
+      width: 20%;
+      margin-left: 5%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+      header nav .nav-left i {
+        color: white;
+        font-size: 20px; }
+    header nav .nav-mid {
+      list-style-type: none;
+      height: 100%;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60%; }
+      header nav .nav-mid a {
+        font-family: helvetica;
+        font-size: 18px;
+        color: white;
+        text-decoration: none; }
+    header nav .nav-right {
+      list-style-type: none;
+      height: 100%;
+      width: 20%;
+      margin-right: 5%;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-content: space-between; }
+      header nav .nav-right i {
+        color: white;
+        font-size: 20px; }
+
+.group-chat {
+  width: 100%;
+  height: 90%;
+  background-color: skyblue; }
+  .group-chat .single-msg {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35%;
+    width: 80%;
+    margin: 2% 2% 0% 2%;
+    border: 1px solid lightgray;
+    border-radius: 5%;
+    background-color: lightgray; }
+    .group-chat .single-msg .msg-cover {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
+      width: 90%;
+      padding: 2%;
+      overflow: hidden; }
+      .group-chat .single-msg .msg-cover h3 {
+        font-family: helvetica;
+        font-size: 22px;
+        color: white;
+        font-weight: bold; }
+      .group-chat .single-msg .msg-cover p {
+        font-family: helvetica;
+        font-size: 16px;
+        color: white;
+        overflow: scroll; }
+  .group-chat .offer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 90%;
+    margin: 2% 2% 0% 2%;
+    border: 1px solid lightgray;
+    border-radius: 5%;
+    background-color: blue; }
+    .group-chat .offer .offer-img {
+      background-image: url(../../img/montserrat.jpg);
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 280px; }
+    .group-chat .offer .offer-cover {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
+      width: 90%;
+      padding: 2%;
+      overflow: hidden; }
+      .group-chat .offer .offer-cover h3 {
+        font-family: helvetica;
+        font-size: 22px;
+        color: yellow;
+        font-weight: bold; }
+      .group-chat .offer .offer-cover p {
+        font-family: helvetica;
+        font-size: 16px;
+        color: white;
+        overflow: scroll; }
+
+/*# sourceMappingURL=boardstyles.css.map */

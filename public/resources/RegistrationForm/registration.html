@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Heebo:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+        <form>
+
+            <section class="personal-info">
+
+                <div class="title">
+                    <p>Personal Info</p>
+                </div>
+
+                <div class="name-surname"> 
+                    <div class="name">
+                        <p>Name</p> <br> 
+                        <input type="text" size="25">
+                    </div>  
+                    <div class="name">
+                        <p>Surnames</p> <br> 
+                        <input type="text" size="25">
+                    </div>  
+                </div>
+
+                <div class="passport">  
+
+                    <div class="pass-nr">
+                        <p>Passport Nr: </p> <br>
+                        <input type="text">
+                    </div>  
+                    <div class="pass-scan">
+                        <p>Passport Scan/pic: </p> <br>
+                    <input type="file" name="passportscan"> 
+                </div>  
+
+                </div>
+
+                <div class="tel">
+                    <div class="tel-info">
+                        <p>Telephone Nr</p>
+                        <p>(+ <input type="text" value="code" size="3"> ) - <input type="text" value="telephone nr">
+                    </div>
+                </div>
+
+                <div class="email">
+                    <div class="email-info">
+                        <p>Email</p>
+                        <input type="text" value="email" size="30">
+                    </div>
+                </div>
+
+                <div class="address">
+
+                    <div class="title">
+                        <p>Adress</p>
+                    </div>
+
+                    <div class="street">
+                        <p>Street</p>
+                        <div>
+                            <input type="text" value="adress" size="50">
+                        </div>
+                    </div>  
+
+                    <div class="street-nr">
+                        <p>House Nr</p>
+                        <input type="text" value="nr" size"5">
+                    </div> 
+
+                    <div class="floor">
+                        <p>Floor</p>
+                        <input type="text" value="floor" size"2">
+                    </div>  
+
+                    <div class="door">
+                        <p>Door Nr</p>
+                        <input type="text" value="door" size"2">
+                    </div> 
+
+                    <div class="zip">
+                        <p>Zip Code</p>
+                        <input type="text" value="zip code" size"8">
+                    </div> 
+
+                    <div class="city">
+                        <p>City</p>
+                        <input type="text" value="city" size"20">
+                    </div> 
+
+                    <div class="country">
+                        <p>Country</p>
+                        <input type="text" value="country" size"25">
+                    </div> 
+
+                </div>
+
+
+
+            </section>
+
+            <section class="stay">
+                <p>Stay</p><br>
+
+                <div class="check">
+                    <p>Check-in date</p><br>
+                    <input type="date" name="check-in">
+                </div>
+
+                <div class="check">
+                    <p>Check-out date</p><br>
+                    <input type="date" name="check-out">
+                </div>
+
+                <div class="room">
+                    <p>Room Number</p>
+                    <input type="date" name="check-out">
+                </div>
+
+                
+
+            </section>
+
+            <section class="certifications">
+                <input type="checkbox" name="schoolbox" value="school"><p> I will take a course in a school/university</p><br>
+                <div class="school-info">
+                    <p>School name: </p><input type="text" name="schoolname"><br>
+                    <p>Course: </p><input type="text" name="schoolname"><br>
+                    <p>School certificate:</p> <input type="file" name="schoolcertificate">
+                </div>
+                <input type="checkbox" name="companybox" value="school"><p> I will make an internship in a company</p><br>
+                <div class="school-info">
+                    <p>Company name: </p><input type="text" name="schoolname"><br>
+                    <p>Company certificate:</p> <input type="file" name="schoolcertificate">
+                </div>
+            </section>       
+            
+
+            <input class="submit" type="submit" value="Submit">
+
+            
+        </form>
+
+
+
+    </body>
+
+
+
+</html>

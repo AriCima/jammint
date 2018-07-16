@@ -1,0 +1,311 @@
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+form {
+  margin: 2%;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: red; }
+  form .personal-info {
+    margin: 2%;
+    width: 90%;
+    border: 1px solid lightgray;
+    border-radius: 2%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap; }
+    form .personal-info .title {
+      margin-top: 0px;
+      margin-left: 2%;
+      width: 100%;
+      font-family: helvetica;
+      font-size: 16px;
+      color: lightgray; }
+    form .personal-info .name-surname {
+      margin-left: 2%;
+      width: 45%;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      form .personal-info .name-surname .name {
+        width: 50%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
+        font-family: helvetica;
+        font-size: 16px;
+        color: lightgray;
+        line-height: 5px; }
+        form .personal-info .name-surname .name p {
+          margin-bottom: 10px; }
+    form .personal-info .passport {
+      margin-left: 2%;
+      width: 50%;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-items: flex-start;
+      font-family: helvetica;
+      font-size: 16px;
+      color: lightgray;
+      line-height: 5px; }
+      form .personal-info .passport p {
+        margin-bottom: 10px; }
+      form .personal-info .passport .pass-nr {
+        width: 50%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        font-family: helvetica;
+        font-size: 16px;
+        color: lightgray; }
+        form .personal-info .passport .pass-nr input {
+          margin-left: 5px; }
+      form .personal-info .passport .pass-scan {
+        width: 50%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        font-family: helvetica;
+        font-size: 16px;
+        color: lightgray; }
+        form .personal-info .passport .pass-scan input {
+          margin-left: 5px; }
+    form .personal-info .tel {
+      width: 45%;
+      margin-left: 2%;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: helvetica;
+      font-size: 16px;
+      color: lightgray;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: blue; }
+      form .personal-info .tel p {
+        width: 100%;
+        margin-left: 2%; }
+    form .personal-info .email {
+      width: 45%;
+      margin-left: 2%;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: helvetica;
+      font-size: 16px;
+      color: lightgray;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: orange; }
+      form .personal-info .email .email-info {
+        margin-bottom: 2%; }
+      form .personal-info .email input {
+        width: 100%;
+        margin: 2%; }
+    form .personal-info .address {
+      margin-top: 10px;
+      width: 100%;
+      background-color: pink;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      border: 1px solid lightgray;
+      border-radius: 2%; }
+      form .personal-info .address .title {
+        margin-top: 2%;
+        margin-left: 2%;
+        width: 100%;
+        font-family: helvetica;
+        font-size: 16px;
+        color: lightgray; }
+        form .personal-info .address .title p {
+          margin-top: 0px;
+          margin-bottom: 0px; }
+      form .personal-info .address .street {
+        width: 30%;
+        margin-left: 2%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start; }
+      form .personal-info .address .street-nr {
+        width: 10%;
+        margin-left: 2%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start; }
+      form .personal-info .address .floor {
+        width: 10%;
+        margin-left: 2%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start; }
+      form .personal-info .address .door {
+        width: 10%;
+        margin-left: 2%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start; }
+      form .personal-info .address .zop {
+        width: 10%;
+        margin-left: 2%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start; }
+      form .personal-info .address .city {
+        width: 30%;
+        margin-left: 2%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start; }
+      form .personal-info .address .country {
+        width: 40%;
+        margin-left: 2%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start; }
+  form .stay {
+    margin: 2%;
+    width: 90%;
+    height: 300px;
+    border: 1px solid lightgray;
+    border-radius: 2%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green; }
+  form .certifications {
+    width: 90%;
+    margin: 2%;
+    border: 1px solid lightgray;
+    border-radius: 2%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange; }
+  form .submit {
+    background-color: lightblue;
+    box-shadow: 5px 10px #888888; }
+
+/*# sourceMappingURL=styles.css.map */
