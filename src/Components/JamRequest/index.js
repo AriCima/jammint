@@ -139,18 +139,24 @@ export default class JamRequest extends Component {
             </div>
 
             <div className="form-item-info">
-              <p>Name:</p>
+              <div>
+                <p>Name:</p>
+              </div>
               <input 
                 type="text" 
+                size="50"
                 value={this.state.names} 
                 onChange={this.onChangeName}
               />
             </div>
       
             <div className="form-item-info">
-              <p>Surnames:</p>
+              <div>
+                <p>Surnames:</p>
+              </div>
               <input 
                 type="text" 
+                size="50"
                 value={this.state.surnames} 
                 onChange={this.onChangeSurnames}
               />
@@ -169,6 +175,7 @@ export default class JamRequest extends Component {
               <p>Email:</p>
               <input 
                 type="email" 
+                size="50"
                 value={this.state.email} 
                 onChange={this.onChangeEmail}
               />
@@ -178,22 +185,24 @@ export default class JamRequest extends Component {
           <div className="form-item">
 
             <div className="form-item-title">
-              <p>Home Address</p>
+              <h2>Home Address</h2>
             </div>
 
             <div className="form-item-info">
               <p>Street:</p>
               <input 
                 type="text" 
+                size="50"
                 value={this.state.homeStreet} 
                 onChange={this.onChangeHomeStreet}
               />
             </div>
 
             <div className="form-item-info">
-              <p>Hause Nr:</p>
+              <p>House Nr:</p>
               <input 
                 type="text" 
+                size="6"
                 value={this.state.hHouseNr} 
                 onChange={this.onChangehHouseNr}
               />
@@ -204,6 +213,7 @@ export default class JamRequest extends Component {
               <p>Floor:</p>
               <input 
                 type="text" 
+                size="3"
                 value={this.state.hFloorNr} 
                 onChange={this.onChangehHouseNr}
               />
@@ -213,6 +223,7 @@ export default class JamRequest extends Component {
               <p>Door Nr:</p>
               <input 
                 type="text" 
+                size="5"
                 value={this.state.hDoorNr} 
                 onChange={this.onChangehDoorNr}
               />
@@ -222,6 +233,7 @@ export default class JamRequest extends Component {
               <p>Zip Code:</p>
               <input 
                 type="text" 
+                size="15"
                 value={this.state.hZipCode} 
                 onChange={this.onChangehZipCode}
               />
@@ -231,6 +243,7 @@ export default class JamRequest extends Component {
               <p>City:</p>
               <input 
                 type="text" 
+                size="50"
                 value={this.state.hCity} 
                 onChange={this.onChangehCity}
               />
@@ -241,15 +254,17 @@ export default class JamRequest extends Component {
               <p>Country:</p>
               <input 
                 type="text" 
+                size="50"
                 value={this.state.hCountry} 
                 onChange={this.onChangehCountry}
               />
             </div>
 
             <div className="form-item-info">
-              <p>Home Telephone:</p>
+              <p>Phone:</p>
               <input 
                 type="text" 
+                size="25"
                 value={this.state.hTel} 
                 onChange={this.onChangehTel}
               />
@@ -260,6 +275,7 @@ export default class JamRequest extends Component {
               <p>Mobile:</p>
               <input 
                 type="text" 
+                size="25"
                 value={this.state.hMobile} 
                 onChange={this.onChangehMobile}
               />
@@ -269,7 +285,7 @@ export default class JamRequest extends Component {
           <div className="form-item">
 
             <div className="form-item-title">
-              <p>Booking Info</p>
+              <h2>Booking Info</h2>
             </div>
 
             <div className="form-item-info">
@@ -294,13 +310,14 @@ export default class JamRequest extends Component {
               <p>Room Nr:</p>
               <input 
                 type="text" 
+                size="2"
                 value={this.state.roomNr} 
                 onChange={this.onChangeRoomNr}
               />
             </div>
           </div>
 
-        <div className="form-item">
+        <div className="submit">
           <button type="submit">SEND REQUEST</button>
         </div>
 

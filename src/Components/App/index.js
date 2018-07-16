@@ -4,6 +4,9 @@ import * as firebase from 'firebase';
 import Header from '../Header';
 import JamRequest from '../JamRequest';
 
+
+import './index.css';
+
 var config = {
   apiKey: "AIzaSyCxiGIyaCzAFpbF-f9Z2ubOfBIH3Y1tCdE",
   authDomain: "jammint-6030f.firebaseapp.com",
@@ -60,20 +63,26 @@ class App extends Component {
         <Router>
 
           <div className="App">
-            <Header user={user} onLogout={this.logout}/>
-            <Route path="/jamrequest" exact component={JamRequest}/>
 
-              {/* <Switch>
-                <Route path="/" exact component={Home}/>
-                <Route path="/beer-list" component={Home}/>
-                <Route path="/beer/:b" component={BeerDetail} />
-                <Route path="/search/:searchString" component={Search} />
-                <Route path="/signup" component={Register}/>
-                <Route path="/login" component={Login}/>
-                <Route path="*" component={Home}/>
-              </Switch> */}
+            <div className="headerApp">
+              <Header user={user} onLogout={this.logout}/>
+            </div>
 
+            <div className="bodyApp">
+            
+              <Route path="/jamrequest" exact component={JamRequest}/>
 
+                {/* <Switch>
+                  <Route path="/" exact component={Home}/>
+                  <Route path="/beer-list" component={Home}/>
+                  <Route path="/beer/:b" component={BeerDetail} />
+                  <Route path="/search/:searchString" component={Search} />
+                  <Route path="/signup" component={Register}/>
+                  <Route path="/login" component={Login}/>
+                  <Route path="*" component={Home}/>
+                </Switch> */}
+
+              </div>
             {/* <footer>
               <p>this is my footer</p>
             </footer> */}

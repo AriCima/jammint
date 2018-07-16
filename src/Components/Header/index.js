@@ -5,7 +5,7 @@ import './index.css';
 
 const Header = function(props){
     return (
-        <header className="header">
+       
 
             <div className="header">
 
@@ -34,7 +34,7 @@ const Header = function(props){
 
             </div>
             
-        </header>
+        
     );
 }
 export default Header;

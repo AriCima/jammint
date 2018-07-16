@@ -10,7 +10,7 @@ registerServiceWorker();
 
 
 
-<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+{/* <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -22,4 +22,4 @@ registerServiceWorker();
     messagingSenderId: "183749853121"
   };
   firebase.initializeApp(config);
-</script>
+</script> */}
