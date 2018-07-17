@@ -63,39 +63,37 @@ export default class Register extends Component {
   render(){
     const {emailError} = this.state;
     return (
-      <div className="register-form">
+      <div className="inner-container">
         <form onSubmit={this.register}> 
 
-          <div className="form-item">
-            <div className="form-item-label">Email: </div>
+          <div className="box">
+      
             <input 
               type="email" 
+              placeholder="Email"
               value={this.state.email} 
               onChange={this.onChangeEmail}
             />
             {emailError && <span className="form-error">This is mandatory</span>}
-          </div>
 
-          <div className="form-item">
-            <div className="form-item-label">Password: </div>
             <input 
               type="password" 
+              placeholder="Password"
               value={this.state.password} 
               onChange={this.onChangePassword}
             />
-          </div>
 
-          <div className="form-item">
-            <div className="form-item-label">Confirm password: </div>
             <input 
               type="password" 
+              placeholder="Confirm Password"
               value={this.state.passwordConfirm} 
               onChange={this.onChangePasswordConfirm}
             />
-          </div>
+          
 
-          <div className="form-item">
-            <button type="submit">Signup!!</button>
+            <div className="form-item">
+              <button type="submit">Register</button>
+            </div>
           </div>
 
         </form>
@@ -104,3 +102,14 @@ export default class Register extends Component {
   }
 
 }
+
+
+{/* <div class="inner-container">
+    <div class="box">
+      <h1>Login</h1>
+      <input type="text" placeholder="Username"/>
+      <input type="text" placeholder="Password"/>
+      <button>Login</button>
+      <p>Not a member? <span>Sign Up</span></p>
+    </div>
+  </div> */}

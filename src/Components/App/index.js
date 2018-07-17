@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import * as firebase from 'firebase';
 import Header from '../Header';
 import JamRequest from '../JamRequest';
+import Login from '../Accounts/Login';
+import Register from '../Accounts/Register';
 
 
 import './index.css';
@@ -71,13 +73,15 @@ class App extends Component {
             <div className="bodyApp">
             
               <Route path="/jamrequest" exact component={JamRequest}/>
+              <Route path="/landing" component={Login}/>
+              <Route path="/register" component={Register}/>
 
                 {/* <Switch>
                   <Route path="/" exact component={Home}/>
                   <Route path="/beer-list" component={Home}/>
                   <Route path="/beer/:b" component={BeerDetail} />
                   <Route path="/search/:searchString" component={Search} />
-                  <Route path="/signup" component={Register}/>
+                  
                   <Route path="/login" component={Login}/>
                   <Route path="*" component={Home}/>
                 </Switch> */}

@@ -6,15 +6,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: RGB(74 138 244); }
+  background-color: RGB(6 122 227); }
   .header .header-left {
     height: 100%;
     width: 30%;
     margin-left: 2%;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    background-color: red; }
+    align-items: center; }
     .header .header-left .title {
       display: flex;
       justify-content: center;
@@ -25,23 +24,57 @@
         font-size: 35px;
         font-family: arial;
         font-weight: 550; }
-  .header .header-right {
+  .header .header-mid {
     height: 100%;
-    width: 70%;
+    width: 50%;
     margin-left: 3%;
     display: flex;
     justify-content: flex-start;
     align-items: center; }
-    .header .header-right .nav-block {
+    .header .header-mid .nav-block {
       height: 100%;
       margin-left: 10px;
       display: flex;
       justify-content: center;
       align-items: center; }
-      .header .header-right .nav-block .nav-block:hover {
-        background-color: RGB(74 138 244);
-        color: white; }
+      .header .header-mid .nav-block:hover {
+        color: white;
+        border-bottom: 10px solid white; }
+        .header .header-mid .nav-block:hover a {
+          color: white; }
+      .header .header-mid .nav-block:active {
+        color: white;
+        border-bottom: 10px solid white; }
+        .header .header-mid .nav-block:active a {
+          color: white; }
+      .header .header-mid .nav-block a {
+        text-decoration: none;
+        color: RGB(3 67 125);
+        font-size: 20px; }
+  .header .header-right {
+    height: 100%;
+    width: 20%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    .header .header-right .nav-block {
+      height: 100%;
+      margin-left: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .header .header-right .nav-block:hover {
+        color: white;
+        border-bottom: 10px solid white; }
+        .header .header-right .nav-block:hover a {
+          color: white; }
+      .header .header-right .nav-block:active {
+        color: white;
+        border-bottom: 10px solid white; }
+        .header .header-right .nav-block:active a {
+          color: white; }
       .header .header-right .nav-block a {
         text-decoration: none;
-        color: white;
+        color: RGB(3 67 125);
         font-size: 20px; }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AuthService from '../../../services/AuthService'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import './index.css';
 
@@ -14,6 +15,8 @@ class Login extends Component {
         emailError: false,
         loginError: ''
       }
+
+
 
       this.login = this.login.bind(this);
       this.onChangeEmail = this.onChangeEmail.bind(this);
@@ -56,36 +59,36 @@ class Login extends Component {
   render(){
       const {emailError, loginError} = this.state;
       return (
-          <div className="register-form">
+          <div className="inner-container">
 
               <form onSubmit={this.login}> 
               
-                  <div className="form-item">
-                      <div className="form-item-label">Email: </div>
+                  <div className="box">
+                      
                       <input 
                           type="email" 
+                          placeholder="Email"
                           value={this.state.email} 
                           onChange={this.onChangeEmail}
                       />
                       {emailError && <span className="form-error">Campo obligatorio</span>}
-                  </div>
-
-                  <div className="form-item">
-                      <div className="form-item-label">Password: </div>
+                  
                       <input 
                           type="password" 
+                          placeholder="Password"
                           value={this.state.password} 
                           onChange={this.onChangePassword}
                       />
-                  </div>
+                  
 
                   <div>
                       {loginError && <span>{loginError}</span>}
                   </div>
-                  <div className="form-item">
-                      <button type="submit">Login</button>
-                  </div>
 
+
+                    <button>SignIn</button>
+                    <p>Not a member? <span><Link to="/register">Register</Link></span></p>
+                </div>
               </form>
 
           </div>
@@ -94,3 +97,16 @@ class Login extends Component {
 }
 
 export default Login;
+
+{/* <div class="inner-container">
+   
+    <div class="box">
+
+      <h1>Login</h1>
+      <input type="text" placeholder="Username"/>
+      <input type="text" placeholder="Password"/>
+      <button>Login</button>
+      <p>Not a member? <span>Sign Up</span></p>
+
+    </div>
+  </div> */}
