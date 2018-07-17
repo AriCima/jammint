@@ -1,6 +1,141 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   box-sizing: border-box;
+}
+
+div{
+
+
+
+  .photo-slider{
+    margin: 15px 0px 0px 30px;
+    max-width: auto;
+  }
+
+
+  .inner-container-home{
+    width:400px;
+    height:400px;
+    position:absolute;
+    top:calc(50vh - 200px);
+    left:calc(50vw - 200px);
+    overflow:hidden;
+
+    .box{
+      position:absolute;
+      height:100%;
+      width:100%;
+      font-family:Helvetica;
+      color:#fff;
+      background:rgba(0,0,0,0.4);
+      padding:30px 0px;
+
+      .box-header{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2{
+          font-size: 20px;
+          font-family:Helvetica;
+          color:#fff;
+
+
+        }
+
+      }
+
+
+      input{
+        display:block;
+        width:300px;
+        margin:20px auto;
+        padding:15px;
+        background:rgba(0,0,0,0.6);
+        color:#fff;
+        border:0;
+
+        &:focus{
+          outline:none;
+        }
+
+        &:active{
+          outline:none;
+        }
+
+      }
+
+      button{
+        background:#2ecc71;
+        border:0;
+        color:#fff;
+        padding:10px;
+        font-size:20px;
+        width:330px;
+        margin:20px auto;
+        display:block;
+        cursor:pointer;
+
+        &:focus{
+          outline:none;
+        }
+
+        &:active{
+          outline:none;
+          background:#27ae60;
+        }
+
+
+      }
+    
+      p{
+        font-size:14px;
+        text-align:center;
+      }
+      
+      p span{
+        margin-left: 10px;
+        cursor:pointer;
+        color:#666;
+
+        a{
+          text-decoration: none;
+        }
+      }
+
+      button{
+
+        background:#2ecc71;
+        border:0;
+        color:#fff;
+        padding:10px;
+        font-size:20px;
+        width:330px;
+        margin:20px auto;
+        display:block;
+        cursor:pointer;
+
+        &:focus{
+          outline:none;
+        }
+
+        &:active{
+          outline:none;
+          background:#27ae60;
+        }
+        a{
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+    
+  }
 }

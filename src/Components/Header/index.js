@@ -17,6 +17,10 @@ const Header = function(props){
                 </div>
 
                 <div className="header-mid">
+
+                    <div className="nav-block">
+                        <Link to="/landing">Home</Link>
+                    </div>
                    
                     <div className="nav-block">
                         <Link to="/jamrequest">Request</Link>
@@ -27,12 +31,12 @@ const Header = function(props){
                 <div className="header-right">
                 
                     <div className="nav-block">
-                        <Link to="/landing">Sign-In</Link>
+                        <Link to="/login">Sign-In</Link>
                     </div>
 
-                     <div className="nav-block">
+                     {/* <div className="nav-block">
                         {!props.user && <Link to="/signup">Register</Link>}
-                    </div>
+                    </div> */}
 
                     {/* <div className="nav-block">
                         {!props.user && <Link to="/login">Login</Link>}

@@ -63,40 +63,43 @@ export default class Register extends Component {
   render(){
     const {emailError} = this.state;
     return (
-      <div className="inner-container">
-        <form onSubmit={this.register}> 
 
-          <div className="box">
-      
-            <input 
-              type="email" 
-              placeholder="Email"
-              value={this.state.email} 
-              onChange={this.onChangeEmail}
-            />
-            {emailError && <span className="form-error">This is mandatory</span>}
+      <div className="background-register">
+        <div className="inner-container">
+          <form onSubmit={this.register}> 
 
-            <input 
-              type="password" 
-              placeholder="Password"
-              value={this.state.password} 
-              onChange={this.onChangePassword}
-            />
+            <div className="box">
+        
+              <input 
+                type="email" 
+                placeholder="Email"
+                value={this.state.email} 
+                onChange={this.onChangeEmail}
+              />
+              {emailError && <span className="form-error">This is mandatory</span>}
 
-            <input 
-              type="password" 
-              placeholder="Confirm Password"
-              value={this.state.passwordConfirm} 
-              onChange={this.onChangePasswordConfirm}
-            />
-          
+              <input 
+                type="password" 
+                placeholder="Password"
+                value={this.state.password} 
+                onChange={this.onChangePassword}
+              />
 
-            <div className="form-item">
-              <button type="submit">Register</button>
+              <input 
+                type="password" 
+                placeholder="Confirm Password"
+                value={this.state.passwordConfirm} 
+                onChange={this.onChangePasswordConfirm}
+              />
+            
+
+              <div className="form-item">
+                <button type="submit">Register</button>
+              </div>
             </div>
-          </div>
 
-        </form>
+          </form>
+        </div>
       </div>
     );
   }

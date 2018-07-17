@@ -59,11 +59,14 @@ class Login extends Component {
   render(){
       const {emailError, loginError} = this.state;
       return (
+
+        <div className="background-login">
+
           <div className="inner-container">
 
               <form onSubmit={this.login}> 
               
-                  <div className="box">
+                <div className="box">
                       
                       <input 
                           type="email" 
@@ -86,12 +89,12 @@ class Login extends Component {
                   </div>
 
 
-                    <button>SignIn</button>
-                    <p>Not a member? <span><Link to="/register">Register</Link></span></p>
+                    <button>Sign-In</button>
+                    <p>Not a member?</p><button><Link to="/register">Register</Link></button>
                 </div>
               </form>
-
-          </div>
+            </div>
+        </div>
       );
   }
 }

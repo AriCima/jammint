@@ -1,5 +1,90 @@
+@import url(~slick-carousel/slick/slick.css);
+@import url(~slick-carousel/slick/slick-theme.css);
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   box-sizing: border-box; }
+
+div .photo-slider {
+  margin: 15px 0px 0px 30px;
+  max-width: auto; }
+
+div .inner-container-home {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: calc(50vh - 200px);
+  left: calc(50vw - 200px);
+  overflow: hidden; }
+  div .inner-container-home .box {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: Helvetica;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px 0px; }
+    div .inner-container-home .box .box-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      div .inner-container-home .box .box-header h2 {
+        font-size: 20px;
+        font-family: Helvetica;
+        color: #fff; }
+    div .inner-container-home .box input {
+      display: block;
+      width: 300px;
+      margin: 20px auto;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border: 0; }
+      div .inner-container-home .box input:focus {
+        outline: none; }
+      div .inner-container-home .box input:active {
+        outline: none; }
+    div .inner-container-home .box button {
+      background: #2ecc71;
+      border: 0;
+      color: #fff;
+      padding: 10px;
+      font-size: 20px;
+      width: 330px;
+      margin: 20px auto;
+      display: block;
+      cursor: pointer; }
+      div .inner-container-home .box button:focus {
+        outline: none; }
+      div .inner-container-home .box button:active {
+        outline: none;
+        background: #27ae60; }
+    div .inner-container-home .box p {
+      font-size: 14px;
+      text-align: center; }
+    div .inner-container-home .box p span {
+      margin-left: 10px;
+      cursor: pointer;
+      color: #666; }
+      div .inner-container-home .box p span a {
+        text-decoration: none; }
+    div .inner-container-home .box button {
+      background: #2ecc71;
+      border: 0;
+      color: #fff;
+      padding: 10px;
+      font-size: 20px;
+      width: 330px;
+      margin: 20px auto;
+      display: block;
+      cursor: pointer; }
+      div .inner-container-home .box button:focus {
+        outline: none; }
+      div .inner-container-home .box button:active {
+        outline: none;
+        background: #27ae60; }
+      div .inner-container-home .box button a {
+        text-decoration: none;
+        color: white; }
