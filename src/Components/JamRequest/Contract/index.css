@@ -1,0 +1,89 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: helvetica;
+  box-sizing: border-box; }
+
+.contracts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 40px; }
+  .contracts .lenguage {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    .contracts .lenguage .es, .contracts .lenguage .en {
+      width: 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .contracts .lenguage .es:hover, .contracts .lenguage .en:hover {
+        background-color: blue; }
+  .contracts .contract-body {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; }
+    .contracts .contract-body .date {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; }
+    .contracts .contract-body .title {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .contracts .contract-body .title h3 {
+        font-size: 16px;
+        font-weight: bold; }
+    .contracts .contract-body .chart {
+      margin: 20px 0px 10px 0px;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start; }
+      .contracts .contract-body .chart h6 {
+        margin: 0px;
+        font-size: 14px; }
+    .contracts .contract-body .sub-title {
+      width: 100%;
+      margin: 20px 0px 10px 0px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .contracts .contract-body .sub-title h2 {
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin: 0px; }
+    .contracts .contract-body table {
+      margin: 20px 0px 10px 0px; }
+    .contracts .contract-body .paragraph {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .contracts .contract-body .paragraph p {
+        font-size: 14px;
+        margin: 0px; }
+        .contracts .contract-body .paragraph p span {
+          font-weight: bold; }
+    .contracts .contract-body .firmasField {
+      margin-top: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .contracts .contract-body .firmasField .firma {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center; }

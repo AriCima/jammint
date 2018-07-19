@@ -97,3 +97,6 @@ body {
         color: white;
         background: #27ae60;
         width: 200px; }
+        .jam-request-form form .submit button a {
+          text-decoration: none;
+          color: white; }

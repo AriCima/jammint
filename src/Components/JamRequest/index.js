@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Contract from './Contract/'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+
 //import firebase from 'firebase';
 
 import './index.css';
@@ -24,6 +27,8 @@ export default class JamRequest extends Component {
       email: '',
       checkInDate: '',
       checkOutDate: '',
+      studies: '',
+      school: '',
       roomNr: '',
       datesError: false,
     }
@@ -46,8 +51,11 @@ export default class JamRequest extends Component {
     this.onChangehTel = this.onChangehTel.bind(this);
     this.onChangehMobile =  this.onChangehMobile.bind(this);
 
+    this.onChangeStudies = this.onChangeStudies.bind(this);
+    this.onChangeSchool = this.onChangeSchool.bind(this);
     this.onChangeCheckInDate =  this.onChangeCheckInDate.bind(this);
     this.onChangehCheckOutDate = this.onChangehCheckOutDate.bind(this);
+    this.onChangeRoomNr = this.onChangeRoomNr.bind(this);
   }
 
   onChangeName(event){
@@ -98,6 +106,14 @@ export default class JamRequest extends Component {
   onChangeRoomNr(event){
     this.setState({roomNr: event.target.value})
   }
+
+  onChangeStudies(event){
+    this.setState({studies: event.target.value})
+  }
+
+  onChangeSchool(event){
+    this.setState({school: event.target.value})
+  }
   register(e){
     e.preventDefault();
     let error = false;
@@ -112,16 +128,39 @@ export default class JamRequest extends Component {
       error = true;
     }
 
-    if(this.state.checkOutDate < this.state.checkInDate){
+    if(this.state.checkOutDate < this.state.checkIntDate){
       this.setState({datesError: true});
       error = true;
     }
 
     if(!error){
-      this.db.createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-      });
+      // this.db.createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
+      //   var errorCode = error.code;
+      //   var errorMessage = error.message;
+      //});
+      <Contract 
+        name = {this.props.name} 
+        surname = {this.props.surname} 
+        passport = {this.props.passport} 
+        email = {this.props.email} 
+        phone = {this.props.phone} 
+        mobile = {this.props.mobile} 
+      
+        street = {this.props.homeStreet} 
+        houseNr = {this.props.hHouseNr} 
+        floorNr = {this.props.hFloorNr} 
+        doorNr = {this.props.hDoorNr} 
+        zip = {this.props.hZipCode}
+        city = {this.props.hCity} 
+        country = {this.props.hCountry} 
+
+        checkIn = {this.props.checkInDate} 
+        checkOut = {this.props.checkOutDate}
+        studies = {this.props.studies}
+        school = {this.props.school}
+        roomNr = {this.props.roomNr}
+      />
+
     }
   }
 
@@ -256,7 +295,7 @@ export default class JamRequest extends Component {
                 type="text" 
                 size="3"
                 value={this.state.hFloorNr} 
-                onChange={this.onChangehHouseNr}
+                onChange={this.onChangehFloorNr}
               />
             </div>
 
@@ -314,7 +353,7 @@ export default class JamRequest extends Component {
               <input 
                 type="date" 
                 value={this.state.checkInDate} 
-                onChange={this.onChangeCheckInDate}
+                onChange={this.onChange}
               />
             </div>
 
@@ -324,6 +363,24 @@ export default class JamRequest extends Component {
                 type="date" 
                 value={this.state.checkOutDate} 
                 onChange={this.onChangeCheckOutDate}
+              />
+            </div>
+
+            <div className="form-item-info">
+              <p>Studies:</p>
+              <input 
+                type="textarea" 
+                value={this.state.studies} 
+                onChange={this.onChangeStudies}
+              />
+            </div>
+
+            <div className="form-item-info">
+              <p>School:</p>
+              <input 
+                type="text" 
+                value={this.state.school} 
+                onChange={this.onChangeSchool}
               />
             </div>
 
@@ -339,7 +396,7 @@ export default class JamRequest extends Component {
           </div>
 
         <div className="submit">
-          <button type="submit" >JAM !</button>
+          <button type="submit" ><Link to='/jamrequest/contracts'>JAM !</Link></button>
         </div>
 
         </form>

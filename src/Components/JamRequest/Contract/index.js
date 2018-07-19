@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 //import firebase from 'firebase';
 
 import './index.css';
-import { request } from 'http';
+//import { request } from 'http';
 
-export default class ContractES extends Component {
+export default class Contract extends Component {
   constructor(props){
     super(props);
 
@@ -37,7 +37,7 @@ export default class ContractES extends Component {
 
    // this.db = firebase.auth();
 
-    this.register = this.register.bind(this);
+    //this.signContract = this.signContract.bind(this);
     this.totalRent = this.state.rent + this.state.expenses;
     this.deposit = this.totalRent * 2;
     this.balanceDeposit = this.deposit - this.state.payedDeposit;
@@ -60,10 +60,10 @@ export default class ContractES extends Component {
       <div className="contracts">
 
         <div className="lenguage">
-          <div className="ES">
+          <div className="es">
             <h4>ES</h4>
           </div>
-          <div className="EN">
+          <div className="en">
             <h4>EN</h4>
           </div>
         </div>
@@ -80,9 +80,9 @@ export default class ContractES extends Component {
           
           <div className="paragraph">
             <p>De una parte, D. Ariel Cima Porto, con NIF 48.109.279-H y de otra parte,
-              D./Dña. {this.props.name} {this.props.surnname} , NIF/pasaporte {this.props.passport} , teléfono {this.props.phone}, 
+              D./Dña. {this.props.name} {this.props.surnname} , NIF/pasaporte {this.props.passport}, teléfono {this.props.phone}, 
               dirección de correo electrónico {this.props.email} , 
-              domicilio habitual en {this.props.street}  {this.props.houseNr}  {this.props.floorNr} {this.props.doorNr}, {this.props.city}, {this.props.country} , en adelante el ESTUDIANTE.
+              domicilio habitual en {this.props.street}  {this.props.houseNr}  {this.props.floorNr} {this.props.doorNr}, {this.props.zip} {this.props.city}, {this.props.country} , en adelante el ESTUDIANTE.
             </p><br/>
           </div>
         
@@ -95,7 +95,7 @@ export default class ContractES extends Component {
             <ol>
               <li>Que D. Ariel Cima Porto es propietario de la finca sita en C/ Ample, nº 53 de Barcelona.</li>
               <li>Que {this.state.agency} ha hecho la gestión para la búsqueda del alojamiento al ESTUDIANTE.</li>
-              <li>Durante la duración del presente contrato el ESTUDIANTE estudiará {this.props.studies} en  {this.props.univ}.</li>
+              <li>Durante la duración del presente contrato el ESTUDIANTE estudiará {this.props.studies} en  {this.props.school}.</li>
               <li>Que el ESTUDIANTE, está interesado en alojarse en el piso sito en Carrer Ample 53, Principal Primera, 08002 de Barcelona.</li>
               <li>Que el ESTUDIANTE, está interesado en alojarse en la habitación Nr {this.props.roomNr}.</li>
               <li>Por el que se firma el presente contrato de uso y disfrute de habitación en piso compartido, sin que dicho alojamiento suponga en ningún caso un arrendamiento ni total ni parcial de la vivienda.</li>
@@ -107,18 +107,18 @@ export default class ContractES extends Component {
           </div>
           
           <div className="sub-title">
-            <h2>Primero: Periodo del arrendamiento. </h2><br/>
+            <h2>Primero: Periodo del arrendamiento. </h2>
           </div>
 
           <div className="paragraph">
-            <p>El ESTUDIANTE se alojará desde el {this.props-checkIn} hasta el {this.props.checkOut}, siendo la habitación de uso EXCLUSIVO, y pudiendo utilizar junto el resto de estudiantes todas las zonas comunes.<br/>
+            <p>El ESTUDIANTE se alojará desde el {this.props.checkIn} hasta el {this.props.checkOut}, siendo la habitación de uso EXCLUSIVO, y pudiendo utilizar junto el resto de estudiantes todas las zonas comunes.<br/>
                 El horario de entrada el primer día del contrato será entre las 9am y las 10pm, y la salida de la vivienda el último día de contrato será con anterioridad a las 12am. <br/>
                 Ample 53 priorizará que los estudiantes que se alojen en el piso sean personas que cursen los mismos estudios o con un perfil similar.
             </p><br/>
           </div>
 
           <div className="sub-title">
-            <h2>Segundo: Cuota mensual. </h2><br/>
+            <h2>Segundo: Cuota mensual. </h2>
           </div>
           
           <div className="paragraph">
@@ -139,7 +139,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Tercero: Fianza y Balance de Pagos, comisiones Bancarias</h2><br/>
+            <h2>Tercero: Fianza y Balance de Pagos, comisiones Bancarias</h2>
           </div>
 
           <div className="paragraph">
@@ -186,7 +186,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Cuarto: Comisiones Bancarias </h2><br/>
+            <h2>Cuarto: Comisiones Bancarias </h2>
           </div>
 
           <div className="paragraph">
@@ -194,7 +194,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Quinto: Suministros.</h2><br/>
+            <h2>Quinto: Suministros.</h2>
           </div>
 
           <div className="paragraph">
@@ -202,7 +202,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Sexto: Acceso a las zonas comunes de la vivienda. Obligación de colaboración.</h2><br/>
+            <h2>Sexto: Acceso a las zonas comunes de la vivienda. Obligación de colaboración.</h2>
           </div>
 
           <div className="paragraph">
@@ -212,7 +212,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Séptimo: Régimen de visitas con pernoctación.</h2><br/>
+            <h2>Séptimo: Régimen de visitas con pernoctación.</h2>
           </div>
 
           <div className="paragraph">
@@ -221,7 +221,7 @@ export default class ContractES extends Component {
 
 
           <div className="sub-title">
-            <h2>Octavo: Régimen de visitas sin pernoctación. Prohibición de fiestas.</h2><br/>
+            <h2>Octavo: Régimen de visitas sin pernoctación. Prohibición de fiestas.</h2>
           </div>
 
           <div className="paragraph">
@@ -230,7 +230,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Noveno: Comportamiento con los vecinos de la finca.</h2><br/>
+            <h2>Noveno: Comportamiento con los vecinos de la finca.</h2>
           </div>
 
           <div className="paragraph">
@@ -238,7 +238,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>EL ESTUDIANTE no podrá:</h2><br/>
+            <h2>EL ESTUDIANTE no podrá:</h2>
           </div>
 
           <div className="paragraph">
@@ -251,7 +251,7 @@ export default class ContractES extends Component {
           </div>
           
           <div className="sub-title">
-            <h2>Décimo: Reparaciones.</h2><br/>
+            <h2>Décimo: Reparaciones.</h2>
           </div>
 
           <div className="paragraph">
@@ -263,7 +263,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Decimoprimero: Resolución anticipada.</h2><br/>
+            <h2>Decimoprimero: Resolución anticipada.</h2>
           </div>
 
           <div className="paragraph">
@@ -273,7 +273,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Decimosegundo: Penalización por retraso en el pago. </h2><br/>
+            <h2>Decimosegundo: Penalización por retraso en el pago. </h2>
           </div>
 
           <div className="paragraph">
@@ -283,7 +283,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Decimotercero: Mantenimiento en buen estado de la vivienda.</h2><br/>
+            <h2>Decimotercero: Mantenimiento en buen estado de la vivienda.</h2>
           </div>
 
           <div className="paragraph">
@@ -293,7 +293,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Decimocuarto: Limpieza final de la habitación.</h2><br/>
+            <h2>Decimocuarto: Limpieza final de la habitación.</h2>
           </div>
 
           <div className="paragraph">
@@ -301,7 +301,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Decimoquinto: Habitación.</h2><br/>
+            <h2>Decimoquinto: Habitación.</h2>
           </div>
 
           <div className="paragraph">
@@ -311,7 +311,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Decimosexto: Perdida de las llaves</h2><br/>
+            <h2>Decimosexto: Perdida de las llaves</h2>
           </div>
 
           <div className="paragraph">
@@ -321,7 +321,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Decimoséptimo: Juzgados y Tribunales de Barcelona. </h2><br/>
+            <h2>Decimoséptimo: Juzgados y Tribunales de Barcelona. </h2>
           </div>
 
           <div className="paragraph">
@@ -330,7 +330,7 @@ export default class ContractES extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Decimoctavo: Seguridad. </h2><br/>
+            <h2>Decimoctavo: Seguridad. </h2>
           </div>
 
           <div className="paragraph">
@@ -341,12 +341,12 @@ export default class ContractES extends Component {
 
 
 
-          <div className="firmas">
-            <div className="firmaAriel">
+          <div className="firmasField">
+            <div className="firma">
               <p>Ariel Cima Porto</p>
             </div>
-            <div className="firmaEstudiante">
-              <p>{this.props.name} {this.props.surname}</p>
+            <div className="firma">
+              <p> EL ESTUDIANTE{this.props.name} {this.props.surname}</p>
             </div>
           </div>
 

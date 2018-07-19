@@ -7,6 +7,8 @@ import Login from '../Accounts/Login';
 import Register from '../Accounts/Register';
 import Home from '../Home';
 import Board from '../Jam/Board/';
+import Contract from '../JamRequest/Contract';
+
 
 
 import './index.css';
@@ -75,10 +77,12 @@ class App extends Component {
             <div className="bodyApp">
             
               <Route path="/jamrequest" exact component={JamRequest}/>
+              <Route path="/jamrequest/contracts" component={Contract}/>
               <Route path="/landing" component={Home}/>
               <Route path="/login" component={Login}/>
               <Route path="/register" component={Register}/>
               <Route path="/board" component={Board}/>
+
 
                 {/* <Switch>
                   <Route path="/" exact component={Home}/>
