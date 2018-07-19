@@ -6,6 +6,7 @@ import JamRequest from '../JamRequest';
 import Login from '../Accounts/Login';
 import Register from '../Accounts/Register';
 import Home from '../Home';
+import Board from '../Jam/Board/';
 
 
 import './index.css';
@@ -77,6 +78,7 @@ class App extends Component {
               <Route path="/landing" component={Home}/>
               <Route path="/login" component={Login}/>
               <Route path="/register" component={Register}/>
+              <Route path="/board" component={Board}/>
 
                 {/* <Switch>
                   <Route path="/" exact component={Home}/>

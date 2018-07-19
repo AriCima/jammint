@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 //import firebase from 'firebase';
 
 import './index.css';
+import { request } from 'http';
 
 export default class JamRequest extends Component {
   constructor(props){
@@ -101,12 +102,12 @@ export default class JamRequest extends Component {
     e.preventDefault();
     let error = false;
 
-    if(this.state.email == ''){
+    if(this.state.email === ''){
       this.setState({emailError: true});
       error = true;
     }
 
-    if(this.state.password == ''){
+    if(this.state.password === ''){
       this.setState({passwordError: true});
       error = true;
     }
@@ -126,11 +127,30 @@ export default class JamRequest extends Component {
 
   render(){
     const {nameError} = this.state; 
+    
     return (
 
       <div className="jam-request-form">
 
+
+
         <form onSubmit={this.register}> 
+
+          <div className="form-item">
+
+            <div className="jam-info">
+
+              <div className="jam-img">
+                <img src={require('../../images/logoAmple.jpg')}/>
+              </div>
+
+              <div className="invite-text">
+                <h5>You've been invited to <span>jam</span> to <span>Ample 53 </span> "Student's Home in Barcelona"</h5><br/>
+                <p>If you want to jam, please fill the following form</p>
+              </div>
+
+            </div>
+          </div>
 
           <div className="form-item">
 
@@ -178,6 +198,27 @@ export default class JamRequest extends Component {
                 size="50"
                 value={this.state.email} 
                 onChange={this.onChangeEmail}
+              />
+            </div>
+
+            <div className="form-item-info">
+              <p>Phone:</p>
+              <input 
+                type="text" 
+                size="25"
+                value={this.state.hTel} 
+                onChange={this.onChangehTel}
+              />
+            </div>
+
+          
+            <div className="form-item-info">
+              <p>Mobile:</p>
+              <input 
+                type="text" 
+                size="25"
+                value={this.state.hMobile} 
+                onChange={this.onChangehMobile}
               />
             </div>
           </div>
@@ -260,26 +301,6 @@ export default class JamRequest extends Component {
               />
             </div>
 
-            <div className="form-item-info">
-              <p>Phone:</p>
-              <input 
-                type="text" 
-                size="25"
-                value={this.state.hTel} 
-                onChange={this.onChangehTel}
-              />
-            </div>
-
-          
-            <div className="form-item-info">
-              <p>Mobile:</p>
-              <input 
-                type="text" 
-                size="25"
-                value={this.state.hMobile} 
-                onChange={this.onChangehMobile}
-              />
-            </div>
           </div>
 
           <div className="form-item">
@@ -318,7 +339,7 @@ export default class JamRequest extends Component {
           </div>
 
         <div className="submit">
-          <button type="submit">SEND REQUEST</button>
+          <button type="submit" >JAM !</button>
         </div>
 
         </form>

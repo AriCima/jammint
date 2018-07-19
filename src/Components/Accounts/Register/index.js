@@ -53,11 +53,13 @@ export default class Register extends Component {
     }
 
     if(!error){
-      this.db.createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
+      this.db.createUserWithEmailAndPassword(this.state.email, this.state.password).catch((error) => {
+        // var errorCode = error.code;
+        // var errorMessage = error.message;
       });
     }
+
+    console.log('El error es:', error.code)
   }
 
   render(){
@@ -65,7 +67,9 @@ export default class Register extends Component {
     return (
 
       <div className="background-register">
+      
         <div className="inner-container">
+        
           <form onSubmit={this.register}> 
 
             <div className="box">
