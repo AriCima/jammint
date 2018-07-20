@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 
+
 import './index.css';
+import AuthService from '../../../services/AuthService';
+import DataService from '../../../services/DataService';
 
 export default class Register extends Component {
   constructor(props){
@@ -11,10 +14,14 @@ export default class Register extends Component {
       email: '',
       password: '',
       passwordConfirm:'',
-      emailError: false
+      passwordError: false,
+      emailError: false,
+      jamCode:'',
+      jamCodeError: false,
     }
 
     this.db = firebase.auth();
+    this.database = firebase.database();
 
     this.register = this.register.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
@@ -29,6 +36,10 @@ export default class Register extends Component {
   onChangePassword(event){
     this.setState({password: event.target.value})
   }
+  onChangePasswordConfirm(event){
+    this.setState({passwordConfirm: event.target.value})
+  }
+
   onChangePasswordConfirm(event){
     this.setState({passwordConfirm: event.target.value})
   }
@@ -52,18 +63,43 @@ export default class Register extends Component {
       error = true;
     }
 
+    if(this.state.jamCode == ''){
+      this.setState({jamCodeError: true});
+      error = true;
+    }    
+
     if(!error){
-      this.db.createUserWithEmailAndPassword(this.state.email, this.state.password).catch((error) => {
-        // var errorCode = error.code;
-        // var errorMessage = error.message;
+
+      DataService.getJamByCode(this.state.jamCode)
+        .then((jam)=>{   // si firebase devuelve un OK, se ejecuta resolve del Promise (función result)
+          console.log('El ide del Jam es: ', jam)
+          
+          AuthService.register(this.state.email, this.state.password)
+            .then((result)=>{
+              alert("Welcome to Ample 53");
+
+              DataService.saveUserContactInfo(result.user.uid, this.state.email, [jam.id]) //jams = array de todos las jams del usuario
+
+          },(error)=>{
+              this.setState({registerError: error});
+          });
+
+          
+
+
+
+      },(error)=>{
+          this.setState({registerError: error});
       });
+     
     }
 
-    console.log('El error es:', error.code)
+    console.log('El error es:', error)
   }
 
   render(){
-    const {emailError} = this.state;
+    const {emailError, passwordError} = this.state;
+
     return (
 
       <div className="background-register">
@@ -80,6 +116,7 @@ export default class Register extends Component {
                 value={this.state.email} 
                 onChange={this.onChangeEmail}
               />
+
               {emailError && <span className="form-error">This is mandatory</span>}
 
               <input 
@@ -96,6 +133,16 @@ export default class Register extends Component {
                 onChange={this.onChangePasswordConfirm}
               />
             
+                {passwordError && <span className="form-error">Los passwords son distintos</span>}
+
+              <input 
+                type="textd" 
+                placeholder="Jam Code"
+                value={this.state.jamCode} 
+                onChange={ (event) => { this.setState({jamCode: event.target.value}) } }
+              />
+            
+                {passwordError && <span className="form-error">Los passwords son distintos</span>}
 
               <div className="form-item">
                 <button type="submit">Register</button>
@@ -109,14 +156,3 @@ export default class Register extends Component {
   }
 
 }
-
-
-{/* <div class="inner-container">
-    <div class="box">
-      <h1>Login</h1>
-      <input type="text" placeholder="Username"/>
-      <input type="text" placeholder="Password"/>
-      <button>Login</button>
-      <p>Not a member? <span>Sign Up</span></p>
-    </div>
-  </div> */}

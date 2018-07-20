@@ -25,18 +25,18 @@ const Header = function(props){
 
                 <div className="header-left">
                     <div className="title">
-                        <img src={require('../../images/jammint.jpg')}/>
+                        <img src={require('../../images/jammint.png')}/>
                     </div>
                 </div>
 
                 <div className="header-mid">
 
-                    <div className="nav-block">
+                    {/* <div className="nav-block">
                         <Link to="/landing">Home</Link>
-                    </div>
+                    </div> */}
 
                     <div className="nav-block">
-                        <Link to="/landing-1">Home-1</Link>
+                        <Link to="/landing1">Home-1</Link>
                     </div>
                    
                     <div className="nav-block">

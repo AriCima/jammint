@@ -10,16 +10,18 @@ body {
 
 .home{
 
-  margin: 15px 0px 0px 0px;
+  margin: 0;
   padding: 0px;
 
   .photo-slider{
-    margin: 15px 0px 0px 30px;
+    margin: 15px 0 0 0;
     max-width: auto;
 
     .slick-slider .slick-initialized{
       .slick-list{
+    
         .slick-track{
+
           width: 100%;
           img{
             width: 100%;

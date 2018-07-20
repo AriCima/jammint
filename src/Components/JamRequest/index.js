@@ -27,15 +27,15 @@ export default class JamRequest extends Component {
       email: '',
       checkInDate: '',
       checkOutDate: '',
-      studies: '',
-      school: '',
-      roomNr: '',
+      studies:'',
+      school:'',
+      roomNr:'',
       datesError: false,
     }
 
    // this.db = firebase.auth();
 
-    this.register = this.register.bind(this);
+    //this.register = this.register.bind(this);
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeSurnames = this.onChangeSurnames.bind(this);
     this.onChangePassport = this.onChangePassport.bind(this);
@@ -114,55 +114,7 @@ export default class JamRequest extends Component {
   onChangeSchool(event){
     this.setState({school: event.target.value})
   }
-  register(e){
-    e.preventDefault();
-    let error = false;
-
-    if(this.state.email === ''){
-      this.setState({emailError: true});
-      error = true;
-    }
-
-    if(this.state.password === ''){
-      this.setState({passwordError: true});
-      error = true;
-    }
-
-    if(this.state.checkOutDate < this.state.checkIntDate){
-      this.setState({datesError: true});
-      error = true;
-    }
-
-    if(!error){
-      // this.db.createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
-      //   var errorCode = error.code;
-      //   var errorMessage = error.message;
-      //});
-      <Contract 
-        name = {this.props.name} 
-        surname = {this.props.surname} 
-        passport = {this.props.passport} 
-        email = {this.props.email} 
-        phone = {this.props.phone} 
-        mobile = {this.props.mobile} 
-      
-        street = {this.props.homeStreet} 
-        houseNr = {this.props.hHouseNr} 
-        floorNr = {this.props.hFloorNr} 
-        doorNr = {this.props.hDoorNr} 
-        zip = {this.props.hZipCode}
-        city = {this.props.hCity} 
-        country = {this.props.hCountry} 
-
-        checkIn = {this.props.checkInDate} 
-        checkOut = {this.props.checkOutDate}
-        studies = {this.props.studies}
-        school = {this.props.school}
-        roomNr = {this.props.roomNr}
-      />
-
-    }
-  }
+  
 
   render(){
     const {nameError} = this.state; 
@@ -173,7 +125,7 @@ export default class JamRequest extends Component {
 
 
 
-        <form onSubmit={this.register}> 
+        <form onSubmit={console.log("submit")}>
 
           <div className="form-item">
 
@@ -396,7 +348,7 @@ export default class JamRequest extends Component {
           </div>
 
         <div className="submit">
-          <button type="submit" ><Link to='/jamrequest/contracts'>JAM !</Link></button>
+          <button type="submit"><Link to='/jamrequest/contracts/es/:studentInfo'>JAM !</Link></button>
         </div>
 
         </form>

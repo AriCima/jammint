@@ -342,12 +342,15 @@ export default class Contract extends Component {
 
 
           <div className="firmasField">
+
             <div className="firma">
               <p>Ariel Cima Porto</p>
             </div>
+            
             <div className="firma">
               <p> EL ESTUDIANTE{this.props.name} {this.props.surname}</p>
             </div>
+
           </div>
 
         </div>

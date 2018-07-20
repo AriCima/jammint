@@ -24,4 +24,22 @@ export default class AuthService {
             
         });
     }
+
+    static register(email, password){
+
+        return new Promise((resolve, reject) => {
+
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((result) => {
+                console.log("REGISTER", result);
+                resolve(result);  //poner el userId en lugar del OK. ver cómo llega en el result.
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                console.log('AUTH SERVICE::::errorCode: ', errorCode);
+                var errorMessage = error.message;
+                reject(errorMessage)
+            })
+        });
+    }
 }

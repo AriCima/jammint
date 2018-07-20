@@ -7,10 +7,10 @@ body {
   box-sizing: border-box; }
 
 .home {
-  margin: 15px 0px 0px 0px;
+  margin: 0;
   padding: 0px; }
   .home .photo-slider {
-    margin: 15px 0px 0px 30px;
+    margin: 15px 0 0 0;
     max-width: auto; }
     .home .photo-slider .slick-slider .slick-initialized .slick-list .slick-track {
       width: 100%; }

@@ -36,6 +36,7 @@ class Home extends React.Component {
       autoplay: true,
       autoplaySpeed: 3000,
       centerMode: true,
+      centerPadding: '0px',
     };
     return (
 

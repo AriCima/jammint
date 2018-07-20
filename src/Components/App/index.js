@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import * as firebase from 'firebase';
-import Header from '../Header';
+//import Header from '../Header';
+import Header1 from '../Header1';
 import JamRequest from '../JamRequest';
 import Login from '../Accounts/Login';
 import Register from '../Accounts/Register';
 import Home from '../Home';
+import Home1 from '../Home1';
 import Board from '../Jam/Board/';
-import Contract from '../JamRequest/Contract';
+//import Contract from '../JamRequest/Contract';
 
 
 
@@ -34,31 +36,7 @@ class App extends Component {
       user: null
     }
 
-    //this.logout = this.logout.bind(this);
   }
-
-  // componentDidMount(){
-  //   firebase.auth().onAuthStateChanged((user) => {
-  //     if (user) {
-  //       console.log('user: ', user);
-  //       const myUser = {
-  //         email: user.email
-  //       }
-
-  //       this.setState({user : myUser});
-  //     } else {
-  //       console.log("Bye bye");
-  //     }
-  //   });
-  // }
-
-  // logout(){
-  //   firebase.auth().signOut().then(() => {
-  //     this.setState({user: null});
-  //   }, (error) => {
-  //     console.log("ERROR logout");
-  //   });
-  // }
 
 
   render() {
@@ -70,29 +48,23 @@ class App extends Component {
 
           <div className="App">
 
+
             <div className="headerApp">
-              <Header user={user} onLogout={this.logout}/>
+              <Header1 user={user} onLogout={this.logout}/>
             </div>
 
             <div className="bodyApp">
-            
-              <Route path="/jamrequest" exact component={JamRequest}/>
-              <Route path="/jamrequest/contracts" component={Contract}/>
-              <Route path="/landing" component={Home}/>
-              <Route path="/login" component={Login}/>
-              <Route path="/register" component={Register}/>
-              <Route path="/board" component={Board}/>
+
+              <Switch>
+                <Route path="/jamrequest" exact component={JamRequest}/>             
+                {/* <Route path="/landing" component={Home}/> */}
+                <Route path="/landing1" component={Home1}/>
+                <Route path="/login" component={Login}/>
+                <Route path="/register" component={Register}/>
+                <Route path="/board" component={Board}/>
+              </Switch>
 
 
-                {/* <Switch>
-                  <Route path="/" exact component={Home}/>
-                  <Route path="/beer-list" component={Home}/>
-                  <Route path="/beer/:b" component={BeerDetail} />
-                  <Route path="/search/:searchString" component={Search} />
-                  
-                  <Route path="/login" component={Login}/>
-                  <Route path="*" component={Home}/>
-                </Switch> */}
 
               </div>
             {/* <footer>
