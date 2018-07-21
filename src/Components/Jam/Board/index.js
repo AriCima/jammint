@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Blog from "../Blog";
 
-//import './index.css';
+import './index.css';
 
 class Board extends React.Component {
   constructor(props){
@@ -38,13 +38,26 @@ class Board extends React.Component {
   render() {
     
     return (
-      <div>
+      
+      <div className="board">
 
-        <div className="form">
+        <div className="blog">
+
           <form onSubmit={this.onSend}>
-            <p>THIS IS A BLOG</p>
+            <h1>THIS IS A BLOG</h1>
+            <ul>
+              <li>Message</li>
+              <li>Message</li>
+              <li>Message</li>
+              <li>Message</li>
+              <li>Message</li>
+              <li>Message</li>
+              <li>Message</li>
+              <li>Message</li>
+            </ul>
+            
 
-            <Blog messageId={this.state.messageId} userId={this.state.userId} date={this.state.messageDate} messageText={this.state.messageText}/>
+            {/* <Blog messageId={this.state.messageId} userId={this.state.userId} date={this.state.messageDate} messageText={this.state.messageText}/> */}
             
             <input type="textarea" 
               placeholder="Message"
@@ -56,10 +69,20 @@ class Board extends React.Component {
           </form>
         </div>
 
-        <div className="admin-caht">
-          <p>THIS IS THE ADMIN CHAT</p>
-          <button>send</button>
-        </div>
+
+        <div className="board-right-side">
+          <div className="private-area">
+          
+            <h1>PRIVATE AREA</h1>
+          
+          </div>
+
+
+          <div className="admin-caht">
+            <p>THIS IS THE ADMIN CHAT</p>
+            <button>send</button>
+          </div>
+          </div>
         
 
       </div>

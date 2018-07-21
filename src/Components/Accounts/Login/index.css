@@ -5,7 +5,7 @@ body {
   box-sizing: border-box; }
 
 .background-login {
-  margin-top: 15px;
+  top: -60px;
   width: 100%;
   height: 600px;
   background-image: url("../../../images/flatmates.jpg");

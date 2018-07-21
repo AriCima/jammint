@@ -1,94 +1,52 @@
 @import url(~slick-carousel/slick/slick.css);
 @import url(~slick-carousel/slick/slick-theme.css);
+html {
+  font-size: 16px;
+  font-family: helvetica; }
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   box-sizing: border-box; }
 
-div .photo-slider {
-  margin: 15px 0px 0px 30px;
-  max-width: auto; }
-
-div .inner-container-home {
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  top: calc(50vh - 200px);
-  left: calc(50vw - 200px);
-  overflow: hidden; }
-  div .inner-container-home .box {
-    position: absolute;
+.board {
+  top: -60px;
+  background-image: url("../../../images/board.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .board .blog {
+    margin-top: 130px;
+    width: 45%;
     height: 100%;
-    width: 100%;
-    font-family: Helvetica;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 30px 0px; }
-    div .inner-container-home .box .box-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; }
-      div .inner-container-home .box .box-header h2 {
-        font-size: 20px;
-        font-family: Helvetica;
-        color: #fff; }
-        div .inner-container-home .box .box-header h2 span {
-          color: RGB(6 122 227);
-          font-size: 25px;
-          text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; }
-    div .inner-container-home .box input {
-      display: block;
-      width: 300px;
-      margin: 20px auto;
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      border: 0; }
-      div .inner-container-home .box input:focus {
-        outline: none; }
-      div .inner-container-home .box input:active {
-        outline: none; }
-    div .inner-container-home .box button {
-      background: #2ecc71;
-      border: 0;
-      color: #fff;
-      padding: 10px;
-      font-size: 20px;
-      width: 330px;
-      margin: 20px auto;
-      display: block;
-      cursor: pointer; }
-      div .inner-container-home .box button:focus {
-        outline: none; }
-      div .inner-container-home .box button:active {
-        outline: none;
-        background: #27ae60; }
-    div .inner-container-home .box p {
-      font-size: 14px;
-      text-align: center; }
-    div .inner-container-home .box p span {
-      margin-left: 10px;
-      cursor: pointer;
-      color: #666; }
-      div .inner-container-home .box p span a {
-        text-decoration: none; }
-    div .inner-container-home .box button {
-      background: #2ecc71;
-      border: 0;
-      color: #fff;
-      padding: 10px;
-      font-size: 20px;
-      width: 330px;
-      margin: 20px auto;
-      display: block;
-      cursor: pointer; }
-      div .inner-container-home .box button:focus {
-        outline: none; }
-      div .inner-container-home .box button:active {
-        outline: none;
-        background: #27ae60; }
-      div .inner-container-home .box button a {
-        text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.3); }
+    .board .blog form h1 {
+      color: lightgray; }
+      .board .blog form h1 ul {
+        margin: 40px 0;
         color: white; }
+        .board .blog form h1 ul li {
+          margin: 20px 0; }
+    .board .blog form input {
+      margin-top: 100px; }
+  .board .board-right-side {
+    margin-top: 60px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .board .board-right-side .private-area {
+      width: 40%;
+      height: 40%;
+      background-color: rgba(255, 255, 255, 0.9); }
+    .board .board-right-side .admin-chat {
+      width: 40%;
+      height: 40%;
+      background-color: rgba(255, 255, 255, 0.3); }

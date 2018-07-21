@@ -48,7 +48,9 @@ class Login extends Component {
       if(!error){
           this.setState({loginError: ''});
 
-          AuthService.login(this.state.email, this.state.password).then((result)=>{
+          AuthService.login(this.state.email, this.state.password)
+            .then((result)=>{
+                
               this.props.history.push('/board')
           },(error)=>{
               this.setState({loginError: error});

@@ -9,7 +9,7 @@ export default class AuthService {
             firebase.auth().signInWithEmailAndPassword(email, password)
             .then((result) =>{
                 console.log("LOGIN",result);
-                resolve('ok');
+                resolve(result);
             })
 
             .catch((error) => {

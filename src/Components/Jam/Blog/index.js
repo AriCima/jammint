@@ -53,7 +53,7 @@ class Blog extends React.Component {
     console.log("render");
     return (
       <div className="MessageList">
-        <Board onSendMessage={this.sendMessage}/>
+        {/* <Board onSendMessage={this.sendMessage}/> */}
         <p>Messages List</p>
         <ul>
             {this.state.message.map((e) => {
