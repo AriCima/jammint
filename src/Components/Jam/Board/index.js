@@ -42,42 +42,11 @@ class Board extends React.Component {
       <div className="board">
 
         <div className="blog">
-
-          <form onSubmit={this.onSend}>
-            <h1>THIS IS A BLOG</h1>
-            <ul>
-              <li>Message</li>
-              <li>Message</li>
-              <li>Message</li>
-              <li>Message</li>
-              <li>Message</li>
-              <li>Message</li>
-              <li>Message</li>
-              <li>Message</li>
-            </ul>
-            
-
-            {/* <Blog messageId={this.state.messageId} userId={this.state.userId} date={this.state.messageDate} messageText={this.state.messageText}/> */}
-            
-            <input type="textarea" 
-              placeholder="Message"
-              value={this.state.messageText}
-              onChange={this.onChangeMessage}/>
-
-            <button onClick={this.newMessage}>New Message</button>
-            
-          </form>
+          <Blog />
         </div>
 
-
-        <div className="board-right-side">
-          <div className="private-area">
+        <div className="jammers">
           
-            <h1>PRIVATE AREA</h1>
-          
-          </div>
-
-
           <div className="admin-caht">
             <p>THIS IS THE ADMIN CHAT</p>
             <button>send</button>
@@ -88,7 +57,7 @@ class Board extends React.Component {
       </div>
     );
   }
-  }
+}
 
 
 

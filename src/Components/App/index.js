@@ -3,16 +3,17 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import * as firebase from 'firebase';
 //import Header from '../Header';
 import Header1 from '../Header1';
-import JamRequest from '../JamRequest';
+import UserProfile from '../UserProfile';
 import Login from '../Accounts/Login';
 import Register from '../Accounts/Register';
-import Home from '../Home';
 import Home1 from '../Home1';
 import Board from '../Jam/Board/';
 import Footer from '../Footer/';
 import { withAlert } from 'react-alert';
 import { Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
+import DataService from '../../services/DataService';
+
 //import Contract from '../JamRequest/Contract';
 
 
@@ -54,17 +55,24 @@ class App extends Component {
 
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log('user: ', user);
-        const myUser = {
-          email: user.email
-        }
+        
+        DataService.getUserContactInfo(user.uid).then(
+          (userData)=>{
+            console.log('userData: ', userData);
+            this.setState({user : userData});
+          }, 
+          (errorMessage)=>{
+            console.log(errorMessage)
+          }
+        )
 
-        this.setState({user : myUser});
+      
       } else {
         this.setState({user : null});
       }
     });
   }
+
 
 
 
@@ -89,7 +97,7 @@ class App extends Component {
                 <div className="bodyApp">
 
                   <Switch>
-                    <Route path="/jamrequest" exact component={JamRequest}/>             
+                    <Route path="/user-profile" exact component={UserProfile}/>             
                     {/* <Route path="/landing" component={Home}/> */}
                     <Route path="/landing1" component={Home1}/>
                     <Route path="/login" component={Login}/>

@@ -29,7 +29,7 @@ export default class DataService {
         });
     }
 
-    static saveUserContactInfo(userId, email, jams){
+    static saveUserContactInfo(userId, email, jams){  //registro en Firebase
 
         return new Promise((resolve, reject) => {
 
@@ -48,6 +48,24 @@ export default class DataService {
                 console.log('User NOT added: ', errorCode);
                 var errorMessage = error.message;
                 
+            })
+            
+        });
+    }
+
+    static getUserContactInfo(userId){
+
+        return new Promise((resolve, reject) => {
+
+            firebase.firestore().collection('users').doc(userId).get()
+            .then((result) => {
+                resolve(result.data());   // OBTENGO TODO LO QUE TENGO ALMACENADO DE ÉSTE USUARIO
+            })
+
+            .catch((error) => {
+               
+                reject('Usuario no existe');
+
             })
             
         });

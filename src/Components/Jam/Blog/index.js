@@ -53,7 +53,7 @@ class Blog extends React.Component {
     console.log("render");
     return (
       <div className="MessageList">
-        {/* <Board onSendMessage={this.sendMessage}/> */}
+
         <p>Messages List</p>
         <ul>
             {this.state.message.map((e) => {
@@ -66,6 +66,14 @@ class Blog extends React.Component {
                 )
             })}
         </ul>
+
+      <input type="textarea" 
+        placeholder="Message"
+        value={this.state.messageText}
+        onChange={this.onChangeMessage}
+      />
+
+      <button onClick={this.newMessage}>New Message</button>
       </div>
       );
   }
