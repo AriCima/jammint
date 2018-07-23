@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import './index.css';
 
@@ -45,8 +45,21 @@ export default class PrivateArea extends React.Component {
 
         </div>
 
-        
-        
+        <div className="section">
+
+          <div className="section-title">
+            <h4>Your contract</h4>
+          </div>
+
+          <div className="contract-info-pic">
+            <Link to="user/contract-info"><img src={require('../../../icons/contract.png')}> </img></Link>
+          </div>
+
+          <div className="contract-info-view">
+            <Link to="user/contract"><p>View you contract</p></Link>
+          </div>
+
+        </div>
 
       </div>
     );

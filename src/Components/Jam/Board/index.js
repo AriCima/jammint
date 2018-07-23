@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Board from '../Board/';
 import Message from "./Message/";
 
 //import './index.css';
 
-class Blog extends React.Component {
+class Board extends React.Component {
   constructor(props){
     super(props);
 
@@ -82,7 +81,7 @@ class Blog extends React.Component {
 
 
 
-export default Blog;
+export default Board;
 
 
 

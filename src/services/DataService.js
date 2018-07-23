@@ -29,12 +29,16 @@ export default class DataService {
         });
     }
 
-    static saveUserContactInfo(userId, userPic, name, surnames, passport, passportPic, street, houseNr, floorNr, doorNr, zipCode, city, country, tel, mobile, email, checkInDate, checkOutDate, studies, school, roomNr, jams){  //registro en Firebase
+    static saveUserContactInfo(userId, userPicture, name, surnames, passport, passportPic,
+         street, houseNr, floorNr, doorNr, zipCode, city,country, tel, mobile, email, 
+         checkInDate, checkOutDate, studies, school, jams, roomNr)
+        {  //registro en Firebase
 
         return new Promise((resolve, reject) => {
 
             firebase.firestore().collection('users').doc(userId).set({
-                userPic     : userPic,
+                userId      : userId,
+                userPicture : userPicture,
                 name        : name,
                 surnames    : surnames,
                 passport    : passport,
@@ -50,15 +54,16 @@ export default class DataService {
                 mobile      : mobile,
                 email       : email,
                 checkInDate : checkInDate,
-                checkOutDate: checkOutDat,
+                checkOutDate: checkOutDate,
                 studies     : studies,
                 school      : school,
                 jams        : jams, 
+                roomNr      : roomNr,
             })
             .then((result) => {
                 
                 console.log("User succesfully added !")
-                resolve('ok');
+                resolve(result);
             })
 
             .catch((error) => {

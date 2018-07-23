@@ -45,12 +45,14 @@ class Header extends Component {
                     </div>
                     
                     <div className="nav-block">
-                        <Link to="/jamrequest">Request</Link>
+                        <Link to="/contract-info">Contract Info</Link>
                     </div>
 
                     <div className="nav-block">
                         <Link to="/board">Board</Link>
                     </div>
+
+                    
                     
                 </div>
 

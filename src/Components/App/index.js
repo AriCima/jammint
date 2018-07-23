@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import * as firebase from 'firebase';
 
 import Header1 from '../Header1';
-import UserProfile from '../UserProfile';
+import ContractInfo from '../Jam/PrivateArea/ContractInfo';
 import Login from '../Accounts/Login';
 import Register from '../Accounts/Register';
 import Home1 from '../Home1';
@@ -100,7 +100,7 @@ class App extends Component {
                 <div className="bodyApp">
 
                   <Switch>
-                    <Route path="/user-profile" exact component={UserProfile}/>             
+                    <Route path="/contract-info" exact component={ContractInfo}/>             
                     {/* <Route path="/landing" component={Home}/> */}
                     <Route path="/landing1" component={Home1}/>
                     <Route path="/login" component={Login}/>
