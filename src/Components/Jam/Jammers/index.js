@@ -15,29 +15,16 @@ export default class Jammers extends React.Component {
     render() {
         
         return (
-            this.state.roomCover.map((userId,i) => {
             
+            <div className="jammers">
 
-                <div className="room-cover">
+                <p>This is jammers</p>
 
-                    <div className="room-cover-left">
-                        <div className="user-pic">
-                        
-                        </div>
-                    </div>
+            </div>
 
-                    <div className="room-cover-right">
-
-                        <div className="userName">
-                            <p>Room {this.props.room} | </p> <h4>{this.props.name}</h4>
-                        </div>
-
-                    </div>
-
-                </div>
             
-            })
         )
+        
 
     };
   

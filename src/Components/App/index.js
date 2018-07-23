@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import * as firebase from 'firebase';
 
-import Header1 from '../Header1';
+import Header from '../Header';
 import ContractInfo from '../Jam/PrivateArea/ContractInfo';
 import Login from '../Accounts/Login';
 import Register from '../Accounts/Register';
-import Home1 from '../Home1';
-import Board from '../Jam/Board/';
+import Home from '../Home';
+import Jam from '../Jam/Board';
 import PrivateArea from '../Jam/PrivateArea';
 import Footer from '../Footer/';
 import DataService from '../../services/DataService';
@@ -62,6 +62,7 @@ class App extends Component {
         DataService.getUserContactInfo(user.uid).then(
           (userData)=>{
             console.log('userData: ', userData);
+            userData.id = user.uid;
             this.setState({user : userData});
           }, 
           (errorMessage)=>{
@@ -94,19 +95,19 @@ class App extends Component {
 
 
                 <div className="headerApp">
-                  <Header1 user={user} />
+                  <Header user={user} />
                 </div>
 
                 <div className="bodyApp">
 
                   <Switch>
-                    <Route path="/contract-info" exact component={ContractInfo}/>             
-                    {/* <Route path="/landing" component={Home}/> */}
-                    <Route path="/landing1" component={Home1}/>
+
+                    <Route path="/landing" component={Home}/>
                     <Route path="/login" component={Login}/>
                     <Route path="/register" component={Register}/>
-                    <Route path="/board/:s" exact render = {(props) => {return <Board userId={this.state.user}/>}}/>
-                    <Route path="/private-area" exact render = {(props) => {return <PrivateArea userId={this.state.user}/>}}/>
+                    <Route path="/jam/:s" exact render = {(props) => {return <Jam user={this.state.user}/>}}/>
+                    <Route path="/priv-area" exact render = {(props) => {return <PrivateArea user={this.state.user}/>}}/>
+                    <Route path="/contract-info/:s" exact render = {(props) => {return <ContractInfo user={this.state.user}/>}}/>
                   </Switch>
 
                 </div>

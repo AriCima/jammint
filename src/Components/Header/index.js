@@ -41,7 +41,7 @@ class Header extends Component {
                 <div className="header-mid">
 
                     <div className="nav-block">
-                        <Link to="/landing1">Home-1</Link>
+                        <Link to="/landing">Home</Link>
                     </div>
                     
                     <div className="nav-block">
@@ -49,7 +49,7 @@ class Header extends Component {
                     </div>
 
                     <div className="nav-block">
-                        <Link to="/board">Board</Link>
+                        <Link to="/jam/VdEzQA4Ein9DMmsQmkth">Jam</Link>
                     </div>
 
                     
@@ -60,7 +60,6 @@ class Header extends Component {
 
                     <div className="nav-block">
                         {this.props.user && <Link to="/priv-area">Private Areat</Link>} 
-}
                     </div>
 
                     <div className="nav-block">

@@ -1,80 +1,60 @@
 import React, { Component } from 'react';
-import Message from "./Message/";
 
-//import './index.css';
+
+import './index.css';
 
 class Board extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      message: [
-          {date: 1, messageText: "Message 1", messageId:'a', userId:'user1'},
-          {date: 2, messageText: "Message 2", messageId:'b', userId:'user2'}
-      ],
+      message: [],
 
     }
-
-    this.sendMessage = this.sendMessage.bind(this);
 
     console.log("constructor");
+
+    
   }
 
-  shouldComponentUpdate(nextProps, nextState){
-    console.log('shouldComponentUpdate');
-    console.log(this.props, nextProps);
-    console.log(this.state, nextState);
+ 
 
-    if(this.props.message.date !== nextProps.message.date){
-        return true;
-    }
-    return false;
-  }
+
 
   
-  sendMessage(messageText){
-    let message = Object.assign(this.state.message);
-    message.push({
-      messageText: messageText,
-      read: false
-    });
-    this.setState({
-        message,
-        recentlyAddedMessage: true
-    });
-
-    setTimeout(()=>{
-        this.setState({recentlyAddedMessage: false});
-    },5000);
-  }
 
   render() {
     console.log("render");
+    console.log('props de Board', this.props)
     return (
-      <div className="MessageList">
+      
 
-        <p>Messages List</p>
-        <ul>
-            {this.state.message.map((e) => {
-                return (
-                  <Message 
-                    key   = {e.messageId}
-                    date  = {e.messageDate}
-                    text = {e.messageText}
-                  />
-                )
-            })}
-        </ul>
+      <div className="board">
 
-      <input type="textarea" 
-        placeholder="Message"
-        value={this.state.messageText}
-        onChange={this.onChangeMessage}
-      />
+        <div className="board-title">
+          <h4>PUBLIC BOARD</h4>
+        </div>
 
-      <button onClick={this.newMessage}>New Message</button>
+        <div className="board-content">
+
+
+        </div>
+      
+      
+        <div className="send-area">
+
+          <input type="textarea" 
+            placeholder="Message"
+            value={this.state.messageText}
+            onChange={this.onChangeMessage}
+          />
+
+          <button onClick={this.newMessage}>Send</button>
+        </div>
       </div>
-      );
+      
+
+    );
   }
 }
 
