@@ -11,26 +11,27 @@ export default class UserProfile extends Component {
     super(props);
 
     this.state = {
-      name          : '',
-      surnames      : '',
-      passport      : '',
-      dniPicture    : '',
-      homeStreet    : '',
-      hHouseNr      : '',
-      hFloorNr      : '',
-      hDoorNr       : '',
-      hZipCode      :'',
-      hCity         : '',
-      hCountry      : '',
-      hTel          :'',
-      hMobile       : '',
-      email         : '',
-      checkInDate   : '',
-      checkOutDate  : '',
-      studies       :'',
-      school        :'',
-      roomNr        :'',
-      datesError    : false,
+      userPicture  : '',
+      name         : '',
+      surnames     : '',
+      passport     : '',
+      passportPic  : '',
+      street       : '',
+      houseNr      : '',
+      floorNr      : '',
+      doorNr       : '',
+      zipCode      : '',
+      city         : '',
+      country      : '',
+      tel          : '',
+      mobile       : '',
+      email        : '',
+      checkInDate  : '',
+      checkOutDate : '',
+      studies      : '',
+      school       : '',
+      roomNr       : '',
+      datesError   : false,
     }
 
     this.updateFormInputElegant = this.updateFormInputElegant.bind(this);
@@ -88,7 +89,7 @@ export default class UserProfile extends Component {
             </div>
 
             <CustomDropZone 
-              onFileUpload={(fileUrl)=>{this.updateFormInputElegant('picture', fileUrl)}}
+              onFileUpload={(fileUrl)=>{this.updateFormInputElegant('userPicture', fileUrl)}}
               acceptedFiles="image/jpeg, image/png"
               uploadFolder="userProfile"
             />  
@@ -127,7 +128,7 @@ export default class UserProfile extends Component {
             </div>
 
             <CustomDropZone 
-              onFileUpload={(fileUrl)=>{this.updateFormInputElegant('passport', fileUrl)}}
+              onFileUpload={(fileUrl)=>{this.updateFormInputElegant('passportPic', fileUrl)}}
               acceptedFiles="image/jpeg, image/png"
               uploadFolder="userProfile"
             />  
@@ -147,7 +148,7 @@ export default class UserProfile extends Component {
               <input 
                 type="text" 
                 size="25"
-                value={this.state.hTel} 
+                value={this.state.tel} 
                 onChange={(e)=>{this.updateFormInputElegant('htel', e.target.value)}}
               />
             </div>
@@ -158,8 +159,8 @@ export default class UserProfile extends Component {
               <input 
                 type="text" 
                 size="25"
-                value={this.state.hMobile} 
-                onChange={(e)=>{this.updateFormInputElegant('hMobile', e.target.value)}}
+                value={this.state.mobile} 
+                onChange={(e)=>{this.updateFormInputElegant('mbile', e.target.value)}}
               />
             </div>
           </div>
@@ -175,8 +176,8 @@ export default class UserProfile extends Component {
               <input 
                 type="text" 
                 size="50"
-                value={this.state.homeStreet} 
-                onChange={(e)=>{this.updateFormInputElegant('homeStreet', e.target.value)}}
+                value={this.state.street} 
+                onChange={(e)=>{this.updateFormInputElegant('street', e.target.value)}}
               />
             </div>
 
@@ -185,8 +186,8 @@ export default class UserProfile extends Component {
               <input 
                 type="text" 
                 size="6"
-                value={this.state.hHouseNr} 
-                onChange={(e)=>{this.updateFormInputElegant('hHouseNr', e.target.value)}}
+                value={this.state.houseNr} 
+                onChange={(e)=>{this.updateFormInputElegant('houseNr', e.target.value)}}
               />
             </div>
 
@@ -196,8 +197,8 @@ export default class UserProfile extends Component {
               <input 
                 type="text" 
                 size="3"
-                value={this.state.hFloorNr} 
-                onChange={(e)=>{this.updateFormInputElegant('hFloorNr', e.target.value)}}
+                value={this.state.floorNr} 
+                onChange={(e)=>{this.updateFormInputElegant('floorNr', e.target.value)}}
               />
             </div>
 
@@ -206,8 +207,8 @@ export default class UserProfile extends Component {
               <input 
                 type="text" 
                 size="5"
-                value={this.state.hDoorNr} 
-                onChange={(e)=>{this.updateFormInputElegant('hDoorNr', e.target.value)}}
+                value={this.state.doorNr} 
+                onChange={(e)=>{this.updateFormInputElegant('doorNr', e.target.value)}}
               />
             </div>
 
@@ -216,8 +217,8 @@ export default class UserProfile extends Component {
               <input 
                 type="text" 
                 size="15"
-                value={this.state.hZipCode} 
-                onChange={(e)=>{this.updateFormInputElegant('hZipCode', e.target.value)}}
+                value={this.state.zipCode} 
+                onChange={(e)=>{this.updateFormInputElegant('zipCode', e.target.value)}}
               />
             </div>
 
@@ -226,8 +227,8 @@ export default class UserProfile extends Component {
               <input 
                 type="text" 
                 size="50"
-                value={this.state.hCity} 
-                onChange={(e)=>{this.updateFormInputElegant('hCity', e.target.value)}}
+                value={this.state.city} 
+                onChange={(e)=>{this.updateFormInputElegant('city', e.target.value)}}
               />
             </div>
 
@@ -237,8 +238,8 @@ export default class UserProfile extends Component {
               <input 
                 type="text" 
                 size="50"
-                value={this.state.hCountry} 
-                onChange={(e)=>{this.updateFormInputElegant('hCountry', e.target.value)}}
+                value={this.state.country} 
+                onChange={(e)=>{this.updateFormInputElegant('country', e.target.value)}}
               />
             </div>
 
@@ -301,6 +302,7 @@ export default class UserProfile extends Component {
                 onChange={(e)=>{this.updateFormInputElegant('roomNr', e.target.value)}}
               />
             </div>
+
           </div>
 
         <div className="submit">

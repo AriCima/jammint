@@ -84,10 +84,6 @@ export default class Register extends Component {
               this.setState({registerError: error});
           });
 
-          
-
-
-
       },(error)=>{
           this.setState({registerError: error});
       });

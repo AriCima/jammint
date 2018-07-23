@@ -59,7 +59,8 @@ export default class CustomDropZone extends React.Component {
                             this.setState({ loading: false });
                             this.props.onFileUpload(downloadURL);
                         });
-                });
+                }
+            );
         }
     }
   

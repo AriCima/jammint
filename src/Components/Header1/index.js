@@ -56,6 +56,10 @@ class Header extends Component {
 
                 <div className="header-right">
 
+                    <div className="nav-block">
+                        {this.props.user && <Link to="/priv-area">Private Areat</Link>} 
+}
+                    </div>
 
                     <div className="nav-block">
                         {this.props.user ? 
@@ -63,6 +67,7 @@ class Header extends Component {
                              :
                              <Link to="/login">Sign-In</Link>}
                     </div>
+
 
 
 

@@ -28,7 +28,8 @@ export default class UploadService {
                         .then((downloadURL) => {
                             resolve(downloadURL);
                         });
-                });
+                }
+            );
         })
     }
 }

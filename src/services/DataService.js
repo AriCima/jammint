@@ -29,13 +29,31 @@ export default class DataService {
         });
     }
 
-    static saveUserContactInfo(userId, email, jams){  //registro en Firebase
+    static saveUserContactInfo(userId, userPic, name, surnames, passport, passportPic, street, houseNr, floorNr, doorNr, zipCode, city, country, tel, mobile, email, checkInDate, checkOutDate, studies, school, roomNr, jams){  //registro en Firebase
 
         return new Promise((resolve, reject) => {
 
             firebase.firestore().collection('users').doc(userId).set({
-                email: email,
-                jams: jams
+                userPic     : userPic,
+                name        : name,
+                surnames    : surnames,
+                passport    : passport,
+                passportPic : passportPic,
+                street      : street,
+                houseNr     : houseNr,
+                floorNr     : floorNr,
+                doorNr      : doorNr,
+                zipCode     : zipCode,
+                city        : city,
+                country     : country,
+                tel         : tel,
+                mobile      : mobile,
+                email       : email,
+                checkInDate : checkInDate,
+                checkOutDate: checkOutDat,
+                studies     : studies,
+                school      : school,
+                jams        : jams, 
             })
             .then((result) => {
                 

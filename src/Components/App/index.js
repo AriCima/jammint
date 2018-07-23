@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import * as firebase from 'firebase';
-//import Header from '../Header';
+
 import Header1 from '../Header1';
 import UserProfile from '../UserProfile';
 import Login from '../Accounts/Login';
 import Register from '../Accounts/Register';
 import Home1 from '../Home1';
 import Board from '../Jam/Board/';
+import PrivateArea from '../Jam/PrivateArea';
 import Footer from '../Footer/';
+import DataService from '../../services/DataService';
+
 import { withAlert } from 'react-alert';
 import { Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
-import DataService from '../../services/DataService';
+
 
 //import Contract from '../JamRequest/Contract';
 
@@ -102,7 +105,8 @@ class App extends Component {
                     <Route path="/landing1" component={Home1}/>
                     <Route path="/login" component={Login}/>
                     <Route path="/register" component={Register}/>
-                    <Route path="/board" component={Board}/>
+                    <Route path="/board/:s" exact render = {(props) => {return <Board userId={this.state.user}/>}}/>
+                    <Route path="/private-area" exact render = {(props) => {return <PrivateArea userId={this.state.user}/>}}/>
                   </Switch>
 
                 </div>
