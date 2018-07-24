@@ -268,6 +268,80 @@ body {
 
   }
 
+  .text-over-slider{
+    position: absolute;
+    top: 1200px;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .container-slider{
+
+      width: 90%;
+      height: 600px;
+      border: 6px solid rgb(50, 180, 150);
+      border-radius: 3%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      background-color: rgba(0, 0, 0, 0.3);
+
+      .text-title{
+        width: 100%;
+
+
+        h2{
+          margin-top: 5%;
+          margin-left: 5%;
+          color:white;
+          font-size: 3.12rem;
+          font-weight: 550;
+
+          span{
+            color: rgb(50, 180, 150);
+            font-style: italic;
+          }
+        }
+      }
+
+      .text-slider{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+
+        ul{
+          margin-top: 2%;
+          margin-left: 5%;
+          color: white;
+          font-size: 2.5rem;
+          font-weight: 550;
+          
+          li{
+            list-style-type: none;
+            margin: 20px 0;
+
+            span{
+              color: rgb(50, 180, 150);
+              font-style: italic;
+            }
+          }
+        }
+      }
+
+
+    }
+
+    
+
+    
+  }
 
 
 }

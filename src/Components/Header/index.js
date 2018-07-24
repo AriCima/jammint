@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import { withAlert } from 'react-alert';
 import * as firebase from 'firebase';
+// import { HashLink as Link } from 'react-router-hash-link';
 
 import './index.css';
 
@@ -43,13 +44,17 @@ class Header extends Component {
                     <div className="nav-block">
                         <Link to="/landing">Home</Link>
                     </div>
-                    
+
                     <div className="nav-block">
-                        <Link to="/contract-info">Contract Info</Link>
+                        {!this.props.user && <Link to="/home/#landlords">Landlords</Link>} 
                     </div>
 
                     <div className="nav-block">
-                        <Link to="/jam/VdEzQA4Ein9DMmsQmkth">Jam</Link>
+                        {!this.props.user && <Link to="">Students</Link>} 
+                    </div>
+                    
+                    <div className="nav-block">
+                        <Link to="/contract-info">Contract Info</Link>
                     </div>
 
                     <div className="nav-block">

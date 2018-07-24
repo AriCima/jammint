@@ -66,7 +66,7 @@ class Home extends React.Component {
 
         <div className="home-mid">
 
-          <div className="section-header">
+          <div className="section-header" id="landlords">
             <div className="header-left">
               <button>Create your Jam</button>
             </div>
@@ -185,7 +185,29 @@ class Home extends React.Component {
 
         </div>
 
+        <div className="text-over-slider">
 
+          <div className="container-slider">
+
+            <div className="text-title">
+              <h2>Students can also create their <span>Jams</span></h2>
+            </div>
+
+              <div className="text-slider">
+
+                <ul>
+                  <li>You need <span>30 sec</span> to create it</li>
+                  <li>Convert any activity into a  <span>Jam</span></li>
+                  <li>Invite <span>anyone</span> to jam with you</li>
+                  <li><span>Groupal</span> and <span>private</span> communication all in one </li>
+                  <li>Improve <span>Socializing</span> and <span>Networking</span></li>
+                </ul>
+
+              </div>
+
+          </div>
+         
+        </div>
         
 
       </div>

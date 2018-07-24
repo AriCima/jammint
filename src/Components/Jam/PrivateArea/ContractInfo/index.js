@@ -78,10 +78,8 @@ export default class ContractInfo extends Component {
 
         let userToSave = Object.assign({},this.state)
         delete userToSave.userId,
-
         delete userToSave.roomNr,
 
-        console.log('Room Number: ', this.state.roomNr)
 
       DataService.saveUserContactInfo(this.state.userId, userToSave)
     //}
@@ -97,13 +95,20 @@ export default class ContractInfo extends Component {
                 <form onSubmit={this.saveUserDatainFireStore} >
                     <fieldset>
                         <legend><span className="number">1</span> Personal Info</legend>
-                        
+
+                        <CustomDropZone 
+                            onFileUpload={(fileUrl)=>{this.updateFormInputElegant('userPicture', fileUrl)}}
+                            acceptedFiles="image/jpeg, image/png"
+                            uploadFolder="userProfile"
+                            name="Profile Picture"
+                        />  
+
                         <input 
                             type="text" 
                             name="field1" 
                             placeholder="Your Name *"
-                            value={this.state.names} 
-                            onChange={(e)=>{this.updateFormInputElegant('names', e.target.value)}}
+                            value={this.state.name} 
+                            onChange={(e)=>{this.updateFormInputElegant('name', e.target.value)}}
 
                         />
                         

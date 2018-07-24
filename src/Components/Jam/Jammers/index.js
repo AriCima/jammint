@@ -8,8 +8,11 @@ export default class Jammers extends React.Component {
     super(props);
 
     this.state = {
-        room : [],
+        users : this.props,
     }
+
+    console.log("State en Jammers", this.state.users)
+
   }
 
   _renderJammers(){
