@@ -12,9 +12,9 @@ body {
   box-sizing: border-box;
 }
 
-.jam-board{
-  top: -60px;
-  background-image: url('../../../images/board.jpg');
+.jam{
+  margin-top: 60px;
+  background-image: url('../../assets/images/board.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; 
@@ -24,25 +24,13 @@ body {
   justify-content: space-around;
   align-items: center;
 
-
-  .blog{
-    margin-top: 130px;
-    width: 45%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.3);
+  .jam-board{
+    width: 50%;
+    margin: 0;
   }
-
+  
   .jam-jammers{
-    top: -60px;
-    background-image: url('../../../images/board.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; 
-    width: 100%;
-    height: 800px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
+    width: 50%;
+    margin: 0;
   }
 }

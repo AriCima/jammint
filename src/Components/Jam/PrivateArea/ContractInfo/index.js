@@ -10,7 +10,7 @@ export default class ContractInfo extends Component {
     super(props);
 
     this.state = {
-      usderId      : this.props.userId,
+      userId       : this.props.user.id,
       userPicture  : '',
       name         : '',
       surnames     : '',
@@ -31,7 +31,6 @@ export default class ContractInfo extends Component {
       studies      : '',
       school       : '',
       roomNr       : '',
-      jam          : this.props.jamCode,
       datesError   : false,
       contentError : false,
     }
@@ -39,7 +38,16 @@ export default class ContractInfo extends Component {
     this.updateFormInputElegant = this.updateFormInputElegant.bind(this);
     this.saveUserDatainFireStore =  this.saveUserDatainFireStore.bind(this);
 
+    console.log('Props del Contract Info: ', props)
   }
+
+ 
+  componentDidMount(){
+      // TRAERME LAS VARIABLES DEL getUserContactInfo para que el formulario quede relleno
+    DataService.getUserContactInfo(this.props.user.id)
+
+  }
+
 
 
   updateFormInputElegant(field, value){
@@ -50,7 +58,7 @@ export default class ContractInfo extends Component {
 
   saveUserDatainFireStore(e){
     e.preventDefault();
-    let error = false;
+    // let error = false;
 
     // if (name === '' || surnames ==='' || passport ==='' || street === ''|| houseNr ===''|| zipCode ===''||
     // city ===''|| country ===''||tel ===''||mobile ===''||email ===''||checkInDate ===''|| checkOutDate ===''|| 
@@ -66,24 +74,17 @@ export default class ContractInfo extends Component {
     //   error = true;
     // }
 
-    if(!error){
-     const { userId, userPicture, name, surnames, passport, passportPic, street, houseNr,
-        floorNr, doorNr, zipCode, city, country, tel, mobile, email, checkInDate ,checkOutDate,
-        studies, school, roomNr, jam
-        } = this.state;
+    // if(!error){
 
-      DataService.saveUserContactInfo(userId, userPicture, name, surnames, passport, passportPic, street, houseNr,
-        floorNr, doorNr, zipCode, city, country, tel, mobile, email, checkInDate ,checkOutDate,
-        studies, school, roomNr, jam)
+        let userToSave = Object.assign({},this.state)
+        delete userToSave.userId,
 
-      .then((result)=>{   // si firebase devuelve un OK, se ejecuta resolve del Promise (función result)
-        console.log('Los ID y nombre del usuario son: ', result.userId, result.name);
+        delete userToSave.roomNr,
 
+        console.log('Room Number: ', this.state.roomNr)
 
-      },(error)=>{
-        this.setState({registerError: error});
-      });
-    }
+      DataService.saveUserContactInfo(this.state.userId, userToSave)
+    //}
   }
 
   render(){
@@ -95,7 +96,7 @@ export default class ContractInfo extends Component {
             <div class="form-style">
                 <form onSubmit={this.saveUserDatainFireStore} >
                     <fieldset>
-                        <legend><span class="number">1</span> Personal Info</legend>
+                        <legend><span className="number">1</span> Personal Info</legend>
                         
                         <input 
                             type="text" 
@@ -156,7 +157,7 @@ export default class ContractInfo extends Component {
                     </fieldset>
 
                     <fieldset>
-                        <legend><span class="number">2</span>Home Address</legend>
+                        <legend><span className="number">2</span>Home Address</legend>
                         
                         <input 
                             type="text" 
@@ -216,7 +217,7 @@ export default class ContractInfo extends Component {
                     </fieldset>
 
                     <fieldset>
-                        <legend><span class="number">3</span> Booking Info</legend>
+                        <legend><span className="number">3</span> Booking Info</legend>
                         
                         <input 
                             type="date" 
@@ -260,7 +261,7 @@ export default class ContractInfo extends Component {
                     
                         </fieldset>
 
-                        <button type="submit"><Link to=''>Save</Link></button>
+                        <button type="submit">Save</button>
                 </form>
             </div>
         </div>

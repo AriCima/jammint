@@ -5,7 +5,7 @@ import Jammers from './Jammers';
 
 import './index.css';
 
-class Jam extends React.Component {
+export default class Jam extends React.Component {
   constructor(props){
     super(props);
 
@@ -15,7 +15,7 @@ class Jam extends React.Component {
   
 
   render() {
-    
+    console.log('props de Jam: ', this.props)
     return (
       
       <div className="jam">
@@ -33,10 +33,6 @@ class Jam extends React.Component {
   }
 }
 
-
-
-
-export default Jam;
 
 
 

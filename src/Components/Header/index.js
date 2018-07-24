@@ -31,7 +31,7 @@ class Header extends Component {
 
                 <div className="header-left">
                     <div className="title">
-                        <img src={require('../../images/jammint.png')} 
+                        <img src={require('../../assets/images/jammint.png')} 
                             onClick={() => {
                                 this.props.alert.error('Oh look, an alert!')
                             }}/>
@@ -51,6 +51,13 @@ class Header extends Component {
                     <div className="nav-block">
                         <Link to="/jam/VdEzQA4Ein9DMmsQmkth">Jam</Link>
                     </div>
+
+                    <div className="nav-block">
+                        {this.props.user && <Link to="jam-VdEzQA4Ein9DMmsQmkth-info">AMPLE 53</Link>} 
+                    </div>
+
+
+                    
 
                     
                     

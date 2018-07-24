@@ -70,15 +70,21 @@ export default class Register extends Component {
 
     if(!error){
 
+
       DataService.getJamByCode(this.state.jamCode)
         .then((jam)=>{   // si firebase devuelve un OK, se ejecuta resolve del Promise (función result)
-          console.log('El ide del Jam es: ', jam)
+          console.log('El ID del Jam es: ', jam)
           
           AuthService.register(this.state.email, this.state.password)
             .then((result)=>{
               alert("Welcome to Ample 53");
 
-              DataService.saveUserContactInfo(result.user.uid, this.state.email, [jam.id]) //jams = array de todos las jams del usuario
+              let userToRegister = {
+                email   :this.state.email, 
+                jams    :[jam.id]
+              }
+
+              DataService.saveUserContactInfo(result.user.uid, userToRegister) //jams = array de todos las jams del usuario
 
           },(error)=>{
               this.setState({registerError: error});

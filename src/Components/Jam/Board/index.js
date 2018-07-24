@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-
-
 import './index.css';
 
-class Board extends React.Component {
+export default class Board extends React.Component {
   constructor(props){
     super(props);
 
@@ -11,17 +9,8 @@ class Board extends React.Component {
       message: [],
 
     }
-
-    console.log("constructor");
-
-    
   }
 
- 
-
-
-
-  
 
   render() {
     console.log("render");
@@ -58,10 +47,6 @@ class Board extends React.Component {
   }
 }
 
-
-
-
-export default Board;
 
 
 

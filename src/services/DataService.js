@@ -29,40 +29,17 @@ export default class DataService {
         });
     }
 
-    static saveUserContactInfo(userId, userPicture, name, surnames, passport, passportPic,
-         street, houseNr, floorNr, doorNr, zipCode, city,country, tel, mobile, email, 
-         checkInDate, checkOutDate, studies, school, jams, roomNr)
+    static saveUserContactInfo(userId, userToSave)
         {  //registro en Firebase
+
+        
 
         return new Promise((resolve, reject) => {
 
-            firebase.firestore().collection('users').doc(userId).set({
-                userId      : userId,
-                userPicture : userPicture,
-                name        : name,
-                surnames    : surnames,
-                passport    : passport,
-                passportPic : passportPic,
-                street      : street,
-                houseNr     : houseNr,
-                floorNr     : floorNr,
-                doorNr      : doorNr,
-                zipCode     : zipCode,
-                city        : city,
-                country     : country,
-                tel         : tel,
-                mobile      : mobile,
-                email       : email,
-                checkInDate : checkInDate,
-                checkOutDate: checkOutDate,
-                studies     : studies,
-                school      : school,
-                jams        : jams, 
-                roomNr      : roomNr,
-            })
+            firebase.firestore().collection('users').doc(userId).set(userToSave)
             .then((result) => {
                 
-                console.log("User succesfully added !")
+                console.log("User information succesfully saved !")
                 resolve(result);
             })
 

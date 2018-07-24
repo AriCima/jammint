@@ -80,7 +80,7 @@ class Home extends React.Component {
             <div className="container">
 
               <div className="img-box">
-                <img src={require('../../icons/landing.png')}/>
+                <img src={require('../../assets/icons/landing.png')}/>
               </div>
 
               <div className="text">
@@ -100,7 +100,7 @@ class Home extends React.Component {
             <div className="container">
 
               <div className="img-box">
-                <img src={require('../../icons/checkin.png')}/>
+                <img src={require('../../assets/icons/checkin.png')}/>
               </div>
 
               <div className="text">
@@ -119,7 +119,7 @@ class Home extends React.Component {
             <div className="container">
 
               <div className="img-box">
-                <img src={require('../../icons/home.png')}/>
+                <img src={require('../../assets/icons/home.png')}/>
               </div>
 
               <div className="text">
@@ -138,7 +138,7 @@ class Home extends React.Component {
             <div className="container">
 
               <div className="img-box">
-                <img src={require('../../icons/social.png')}/>
+                <img src={require('../../assets/icons/social.png')}/>
               </div>
 
               <div className="text">
@@ -164,22 +164,22 @@ class Home extends React.Component {
 
           <Slider {...settings}>
             <div>
-              <img src={require('../../images/adventure1.jpg')}/>
+              <img src={require('../../assets/images/adventure1.jpg')}/>
             </div>
             <div>
-              <img src={require('../../images/afternoon1.jpg')}/>
+              <img src={require('../../assets/images/afternoon1.jpg')}/>
             </div>
             <div>
-              <img src={require('../../images/conference1.jpg')}/>
+              <img src={require('../../assets/images/conference1.jpg')}/>
             </div>
             <div>
-              <img src={require('../../images/dinner1.jpg')}/>
+              <img src={require('../../assets/images/dinner1.jpg')}/>
             </div>
             <div>
-              <img src={require('../../images/flatmates1.jpg')}/>
+              <img src={require('../../assets/images/flatmates1.jpg')}/>
             </div>
             <div>
-              <img src={require('../../images/outdoors1.jpg')}/>
+              <img src={require('../../assets/images/outdoors1.jpg')}/>
             </div>
           </Slider>
 

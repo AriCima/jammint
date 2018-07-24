@@ -52,7 +52,7 @@ export default class PrivateArea extends React.Component {
           </div>
 
           <div className="contract-info-pic">
-            <Link to="user/contract-info"><img src={require('../../../icons/contract.png')}> </img></Link>
+            <Link to="user/contract-info"><img src={require('../../../assets/icons/contract.png')}> </img></Link>
           </div>
 
           <div className="contract-info-view">

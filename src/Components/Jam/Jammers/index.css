@@ -1,10 +1,53 @@
 .jammers {
-  margin-top: 60px;
   box-sizing: border-box;
-  width: 45%;
-  height: 600px;
+  width: 100%;
+  height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start; }
+
+.room-cover {
+  width: 95%;
+  margin: 5px 2px;
+  display: flex;
+  justify-content: flex-start;
   align-items: flex-start;
-  background-color: brown; }
+  border: 1px solid rgba(0, 218, 185, 0.8);
+  border-radius: 5%;
+  background-color: blue; }
+  .room-cover .user-pic {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow; }
+    .room-cover .user-pic img {
+      width: 100%;
+      height: 100%; }
+  .room-cover .user-info {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: red; }
+    .room-cover .user-info .user-info-name {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: green; }
+      .room-cover .user-info .user-info-name p {
+        font-family: Helvetica, sans-serif;
+        font-size: 0.8 rem; }
+      .room-cover .user-info .user-info-name h4 {
+        font-family: Helvetica, sans-serif;
+        font-size: 1 rem;
+        font-weight: bold; }
+    .room-cover .user-info .user-info-studies {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: orange; }
