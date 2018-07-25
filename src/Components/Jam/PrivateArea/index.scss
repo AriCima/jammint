@@ -1,0 +1,59 @@
+.collapsible-menu{
+    background-color: rgb(255, 255, 255);
+    padding: 0px 30px;
+    border-bottom: 3px solid #CDE700;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+
+    #menu {
+        display: none;
+
+        &:checked ~ .menu-content{
+            max-height: 100%;
+
+        }
+    }
+
+    label{
+        font-family: helvetica;
+        font-size: 1rem;
+        display: block;
+        cursor: pointer;
+        padding: 10px 0 10px 50px;
+
+        span{
+            color: green;
+        }
+    }
+
+    .menu-content {
+        font-family: 'Oswald', sans-serif; 
+        padding: 0 0 0 50px;
+        max-height: 0;
+        overflow: hidden;
+        font-family: 'Oswald', sans-serif; 
+        padding: 0 0 0 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .gral-info-title{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            h4{
+                font-size: 1rem;
+                font-weight: 550;
+            }
+        }
+
+        p{
+            font-size: 0.8rem;
+        }
+    }
+   
+
+}

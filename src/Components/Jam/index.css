@@ -19,10 +19,21 @@ body {
   height: 800px;
   display: flex;
   justify-content: space-around;
-  align-items: center; }
+  align-items: flex-start; }
   .jam .jam-board {
     width: 50%;
     margin: 0; }
-  .jam .jam-jammers {
+  .jam .jam-right {
     width: 50%;
-    margin: 0; }
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; }
+    .jam .jam-right .jam-privateArea {
+      width: 100%;
+      margin: 0;
+      height: 120px;
+      background-color: red; }
+    .jam .jam-right .jam-jammers {
+      width: 100%;
+      margin: 0; }

@@ -176,6 +176,17 @@ body {
       width: 100%; }
       .home .photo-slider .slick-slider .slick-initialized .slick-list .slick-track img {
         width: 100%; }
+      .home .photo-slider .slick-slider .slick-initialized .slick-list .slick-track .caption {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        .home .photo-slider .slick-slider .slick-initialized .slick-list .slick-track .caption p {
+          color: white;
+          font-size: 2.5rem;
+          font-weight: 550; }
   .home .text-over-slider {
     position: absolute;
     top: 1200px;

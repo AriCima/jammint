@@ -10,27 +10,27 @@ export default class ContractInfo extends Component {
     super(props);
 
     this.state = {
-      userId       : this.props.user.id,
-      userPicture  : '',
-      name         : '',
-      surnames     : '',
-      passport     : '',
-      passportPic  : '',
-      street       : '',
-      houseNr      : '',
-      floorNr      : '',
-      doorNr       : '',
-      zipCode      : '',
-      city         : '',
-      country      : '',
-      tel          : '',
-      mobile       : '',
-      email        : '',
-      checkInDate  : '',
-      checkOutDate : '',
-      studies      : '',
-      school       : '',
-      roomNr       : '',
+    //   userId       : this.props.user.id,
+    //   userPicture  : '',
+    //   name         : '',
+    //   surnames     : '',
+    //   passport     : '',
+    //   passportPic  : '',
+    //   street       : '',
+    //   houseNr      : '',
+    //   floorNr      : '',
+    //   doorNr       : '',
+    //   zipCode      : '',
+    //   city         : '',
+    //   country      : '',
+    //   tel          : '',
+    //   mobile       : '',
+    //   email        : '',
+    //   checkInDate  : '',
+    //   checkOutDate : '',
+    //   studies      : '',
+    //   school       : '',
+    //   roomNr       : '',
       datesError   : false,
       contentError : false,
     }
@@ -43,9 +43,18 @@ export default class ContractInfo extends Component {
 
  
   componentDidMount(){
-      // TRAERME LAS VARIABLES DEL getUserContactInfo para que el formulario quede relleno
-    DataService.getUserContactInfo(this.props.user.id)
-
+    // TRAERME LAS VARIABLES DEL getUserContactInfo para que el formulario quede relleno
+    DataService.getUserContactInfo(this.props.user.id).then(
+        (userData)=>{
+            console.log('userData en App: ', userData);
+            userData.id = this.props.user.uid;
+            this.setState({user : userData});
+        }, 
+        
+        (errorMessage)=>{
+            console.log(errorMessage)
+        }
+    )
   }
 
 
@@ -109,7 +118,6 @@ export default class ContractInfo extends Component {
                             placeholder="Your Name *"
                             value={this.state.name} 
                             onChange={(e)=>{this.updateFormInputElegant('name', e.target.value)}}
-
                         />
                         
                         <input 

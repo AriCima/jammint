@@ -58,7 +58,7 @@ class Header extends Component {
                     </div>
 
                     <div className="nav-block">
-                        {this.props.user && <Link to="jam-VdEzQA4Ein9DMmsQmkth-info">AMPLE 53</Link>} 
+                        {this.props.user && <Link to="/jam/VdEzQA4Ein9DMmsQmkth">AMPLE 53</Link>} 
                     </div>
 
 

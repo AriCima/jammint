@@ -4,6 +4,7 @@ import * as firebase from 'firebase';
 
 import Header from '../Header';
 import ContractInfo from '../Jam/PrivateArea/ContractInfo';
+import Contract from '../Jam/PrivateArea/ContractInfo/Contract';
 import Login from '../Accounts/Login';
 import Register from '../Accounts/Register';
 import Home from '../Home';
@@ -39,7 +40,6 @@ const options = {
   timeout: 5000,
   offset: '30px',
   transition: 'scale'
-  
 };
 
 
@@ -69,7 +69,6 @@ class App extends Component {
             console.log(errorMessage)
           }
         )
-
       
       } else {
         this.setState({user : null});
@@ -106,8 +105,9 @@ class App extends Component {
                     <Route path="/login" component={Login}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/jam/:s" exact render = {(props) => {return <Jam user={this.state.user}/>}}/>
-                    <Route path="/priv-area" exact render = {(props) => {return <PrivateArea user={this.state.user}/>}}/>
+                    {/* <Route path="/priv-area" exact render = {(props) => {return <PrivateArea user={this.state.user}/>}}/> */}
                     <Route path="/contract-info" exact render = {(props) => {return <ContractInfo user={this.state.user}/>}}/>
+                    <Route path="/contract" exact render = {(props) => {return <Contract user={this.state.user}/>}}/>
                   </Switch>
 
                 </div>

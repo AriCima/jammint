@@ -91,12 +91,13 @@ export default class Register extends Component {
           });
 
       },(error)=>{
+          alert('El JamCode ingresado no es válido;')
           this.setState({registerError: error});
       });
      
     }
 
-    console.log('El error es:', error)
+    console.log('El JamCode ingresado no es válido')
   }
 
   render(){

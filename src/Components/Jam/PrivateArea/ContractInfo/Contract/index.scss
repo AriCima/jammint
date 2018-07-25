@@ -3,6 +3,7 @@ body {
   padding: 0px;
   font-family: helvetica;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 
@@ -12,7 +13,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 40px;
+  margin-top: 60px;
 
   .lenguage{
     width: 100%;
@@ -26,9 +27,10 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      font-size: 0.5rem;
 
       &:hover{
-        background-color: blue;
+        text-decoration: underline;
       }
     }
 
@@ -41,6 +43,9 @@ body {
     align-items: center;
     justify-content: flex-start;
 
+    span{
+      font-weight: 700;
+    }
 
     .date{
       width: 100%;

@@ -10,6 +10,8 @@ export default class PrivateArea extends React.Component {
     this.state = {
 
     }
+
+    console.log('Priv Area props: ', this.props)
   }
 
  
@@ -18,49 +20,42 @@ export default class PrivateArea extends React.Component {
     
     return (
       
-      <div className="private-area">
+      <div className="collapsible-menu">
 
-        <div className="section">
+        <input type="checkbox" id="menu"/>
+        <label for="menu"><span>Click here</span> to acces you private info</label>
 
-          <div className="section-title">
-            <h4>Basic Info</h4>
+        <div className="menu-content">
+
+            <div className="gral-info-title">
+              <h4>General Info</h4>
+            </div>
+
+            <p>Check-In: ""</p>
+            <p>Check-Out: ""</p>
+            <p>Room Nr: ""</p>
+            <p>Rent: ""</p>
+            <p>Deposit: ""</p>
+
+            <div className="gral-info-title">
+              <h4>Additional charges</h4>
+            </div>
+
+              <ul>
+                <li>Cleaning Fee (as per contract): 20 €</li>
+              </ul>
+           
+
+            <div className="gral-info-title">
+              <h4>Your contract</h4>
+            </div>
+
+            <div className="contract-info-pic">
+              <img src={require('../../../assets/icons/contract.png')}></img>
+            </div>
+
           </div>
-          <p>{this.props.name}</p> 
-          <p>Check-In: {this.props.checkInDate}</p>
-          <p>Check-Out: {this.props.checkOutDate}</p>
-          <p>Room Nr: {this.props.roomNr}</p>
-          <p>Rent: {this.props.rent}</p>
-          <p>Deposit: {this.props.deposit}</p>
-        </div>
-
-        <div className="section">
-
-          <div className="section-title">
-            <h4>Additional charges</h4>
-          </div>
-          
-          <ul>
-            <li>Cleaning Fee (as per contract): 20 €</li>
-          </ul>
-
-        </div>
-
-        <div className="section">
-
-          <div className="section-title">
-            <h4>Your contract</h4>
-          </div>
-
-          <div className="contract-info-pic">
-            <Link to="user/contract-info"><img src={require('../../../assets/icons/contract.png')}> </img></Link>
-          </div>
-
-          <div className="contract-info-view">
-            <Link to="user/contract"><p>View you contract</p></Link>
-          </div>
-
-        </div>
-
+        
       </div>
     );
   }

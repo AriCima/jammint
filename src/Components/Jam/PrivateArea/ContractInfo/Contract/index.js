@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-//import firebase from 'firebase';
 
 import './index.css';
-//import { request } from 'http';
+
 
 export default class Contract extends Component {
   constructor(props){
@@ -12,46 +11,23 @@ export default class Contract extends Component {
       signed        : false,
       lenguage      : 'ES',
       agency        : 'RESA Housing',
-      name          : this.props.name,
-      surnames      : this.props.surnames,
-      passport      : this.props.passport,
-      passportPic   : this.props.passportPic ,
-      street        : this.props.street,
-      houseNr       : this.props.houseNr,
-      floorNr       : this.props.floorNr,
-      doorNr        : this.props.doorNr,
-      zipCode       : this.props.zipCode,
-      city          : this.props.city,
-      country       : this.props.country,
-      tel           : this.props.tel,
-      mobile        : this.props.mobile,
-      email         : this.props.email,
-      checkInDate   : this.props.checkInDate ,
-      checkOutDate  : this.props.checkOutDate,
-      roomNr        : this.props.roomNr,
-      rent          : this.props.rent,
+      rent          : 600,
       expenses      : 90,
       datesError    : false,
       payedDeposit  : 0,
       payedRent     : 0,
     }
 
-   // this.db = firebase.auth();
-
-    //this.signContract = this.signContract.bind(this);
     this.totalRent = this.state.rent + this.state.expenses;
     this.deposit = this.totalRent * 2;
     this.balanceDeposit = this.deposit - this.state.payedDeposit;
     this.balanceRent = this.state.rent - this.state.payedRent;
     this.toBePayedAtCheckIn = this.balanceDeposit + this.balanceRent;
 
+    console.log('Contract props: ', this.props);
+
   }
 
-  
-  signContract(e){
-    e.preventDefault();
-    this.setState({signed: true});
-  }
 
   render(){
    
@@ -72,7 +48,7 @@ export default class Contract extends Component {
         <div className="contract-body">
         
           <div className="date">
-            <p>En Barcelona, a {this.props.checkIn}.</p>
+            <p>En Barcelona, a <span>{this.props.user.checkInDate}</span>.</p>
           </div>
 
           <div className="title">
@@ -81,9 +57,9 @@ export default class Contract extends Component {
           
           <div className="paragraph">
             <p>De una parte, D. Ariel Cima Porto, con NIF 48.109.279-H y de otra parte,
-              D./Dña. {this.props.name} {this.props.surnname} , NIF/pasaporte {this.props.passport}, teléfono {this.props.phone}, 
-              dirección de correo electrónico {this.props.email} , 
-              domicilio habitual en {this.props.street}  {this.props.houseNr}  {this.props.floorNr} {this.props.doorNr}, {this.props.zip} {this.props.city}, {this.props.country} , en adelante el ESTUDIANTE.
+              D./Dña. <span>{this.props.user.names}</span> <span>{this.props.user.surnames}</span> , NIF/pasaporte <span>{this.props.user.passport}</span>, teléfono <span>{this.props.user.tel}</span>, 
+              dirección de correo electrónico <span>{this.props.user.email}</span>, 
+              domicilio habitual en <span>{this.props.user.street}</span>  <span>{this.props.user.houseNr}</span>  <span>{this.props.user.floorNr}</span> <span>{this.props.user.doorNr}</span>, <span>{this.props.user.zipCode}</span> <span>{this.props.user.city}</span>, <span>{this.props.user.country}</span>, en adelante el ESTUDIANTE.
             </p><br/>
           </div>
         
@@ -95,10 +71,10 @@ export default class Contract extends Component {
           <div className="paragraph">
             <ol>
               <li>Que D. Ariel Cima Porto es propietario de la finca sita en C/ Ample, nº 53 de Barcelona.</li>
-              <li>Que {this.state.agency} ha hecho la gestión para la búsqueda del alojamiento al ESTUDIANTE.</li>
-              <li>Durante la duración del presente contrato el ESTUDIANTE estudiará {this.props.studies} en  {this.props.school}.</li>
+              <li>Que <span>{this.state.agency}</span> ha hecho la gestión para la búsqueda del alojamiento al ESTUDIANTE.</li>
+              <li>Durante la duración del presente contrato el ESTUDIANTE estudiará <span>{this.props.user.studies}</span> en  <span>{this.props.user.school}</span>.</li>
               <li>Que el ESTUDIANTE, está interesado en alojarse en el piso sito en Carrer Ample 53, Principal Primera, 08002 de Barcelona.</li>
-              <li>Que el ESTUDIANTE, está interesado en alojarse en la habitación Nr {this.props.roomNr}.</li>
+              <li>Que el ESTUDIANTE, está interesado en alojarse en la habitación Nr <span>{this.props.user.roomNr}</span>.</li>
               <li>Por el que se firma el presente contrato de uso y disfrute de habitación en piso compartido, sin que dicho alojamiento suponga en ningún caso un arrendamiento ni total ni parcial de la vivienda.</li>
             </ol><br/>
           </div>
@@ -112,7 +88,7 @@ export default class Contract extends Component {
           </div>
 
           <div className="paragraph">
-            <p>El ESTUDIANTE se alojará desde el {this.props.checkIn} hasta el {this.props.checkOut}, siendo la habitación de uso EXCLUSIVO, y pudiendo utilizar junto el resto de estudiantes todas las zonas comunes.<br/>
+            <p>El ESTUDIANTE se alojará desde el <span>{this.props.user.checkInDate}</span> hasta el <span>{this.props.user.checkOutDate}</span>, siendo la habitación de uso EXCLUSIVO, y pudiendo utilizar junto el resto de estudiantes todas las zonas comunes.<br/>
                 El horario de entrada el primer día del contrato será entre las 9am y las 10pm, y la salida de la vivienda el último día de contrato será con anterioridad a las 12am. <br/>
                 Ample 53 priorizará que los estudiantes que se alojen en el piso sean personas que cursen los mismos estudios o con un perfil similar.
             </p><br/>
@@ -123,7 +99,7 @@ export default class Contract extends Component {
           </div>
           
           <div className="paragraph">
-            <p>El ESTUDIANTE abonará un importe mensual de {this.totalRent}euros <span>suministros incluidos</span> con anterioridad al día 5 de cada mes en el número de cuenta de Ariel Cima Porto:</p>
+            <p>El ESTUDIANTE abonará un importe mensual de <span>{this.totalRent}euros suministros incluidos</span> con anterioridad al día 5 de cada mes en el número de cuenta de Ariel Cima Porto:</p>
           </div>
 
           <div className="chart">
@@ -147,38 +123,6 @@ export default class Contract extends Component {
             <p>El ESTUDIANTE dejará en depósito en concepto de fianza un importe de <span>{this.deposit} euros</span> para cubrir posibles desperfectos en la vivienda. </p>
           </div>
 
-          <table>
-            <tr>
-              <th>BALANCE DE PAGOS</th>
-            </tr>
-
-            <tr>
-              <th>Concepto</th>
-              <th>Importe</th>
-              <th>Pagado</th>
-              <th>A pagar</th>
-            </tr>
-
-            <tr>
-              <th>Depósito</th>
-              <th>{this.deposit}</th>
-              <th>{this.state.payedDeposit}</th>
-              <th>{this.balanceDeposit}</th>
-            </tr>
-
-            <tr>
-              <th>Alquiler 1er mes</th>
-              <th>{this.state.rent}</th>
-              <th>{this.state.payedRent}</th>
-              <th>{this.balanceRent}</th>
-            </tr>
-
-            <tr>
-              <th>TOTAL A PAGAR</th>
-              <th>{this.toBePayedAtCheckIn}</th>
-            </tr>
-
-          </table>
 
           <div className="paragraph">
             <p>En el momento de la firma del presente contrato el pago se puede hacer en efectivo por Transferencia Bancaria antes de la entrega de las llaves. <br/>
@@ -322,7 +266,7 @@ export default class Contract extends Component {
           </div>
 
           <div className="sub-title">
-            <h2>Decimoséptimo: Juzgados y Tribunales de Barcelona. </h2>
+            <h2>Decimoséptimo: Juzgados y Tribunales de Barcelona.</h2>
           </div>
 
           <div className="paragraph">
@@ -349,7 +293,7 @@ export default class Contract extends Component {
             </div>
             
             <div className="firma">
-              <p> EL ESTUDIANTE{this.props.name} {this.props.surname}</p>
+              <p> EL ESTUDIANTE<span>{this.props.user.name}</span> <span>{this.props.user.surname}</span></p>
             </div>
 
           </div>

@@ -31,13 +31,14 @@ class Home extends React.Component {
       arrows: false,
       fade: true,
       infinite: true,
-      speed: 500,
+      speed: 3000,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 6000,
       centerMode: true,
       centerPadding: '0px',
+      pauseOnHover: false,
     };
     return (
 
@@ -163,19 +164,23 @@ class Home extends React.Component {
         <div className="photo-slider">
 
           <Slider {...settings}>
-            <div>
+            <div className="image-box">     
               <img src={require('../../assets/images/adventure1.jpg')}/>
+              <div className="caption">You need <span>30 sec</span> to create it</div>
             </div>
-            <div>
+            <div className="image-box">
               <img src={require('../../assets/images/afternoon1.jpg')}/>
+              <div className="caption">You need <span>30 sec</span> to create it</div>
             </div>
-            <div>
+            <div className="image-box">
               <img src={require('../../assets/images/conference1.jpg')}/>
+              <div className="caption">You need <span>30 sec</span> to create it</div>
             </div>
-            <div>
+            <div className="image-box">
               <img src={require('../../assets/images/dinner1.jpg')}/>
+              <div className="caption">You need <span>30 sec</span> to create it</div>
             </div>
-            <div>
+            <div className="image-box">
               <img src={require('../../assets/images/flatmates1.jpg')}/>
             </div>
             <div>
@@ -185,7 +190,7 @@ class Home extends React.Component {
 
         </div>
 
-        <div className="text-over-slider">
+        {/* <div className="text-over-slider">
 
           <div className="container-slider">
 
@@ -208,7 +213,7 @@ class Home extends React.Component {
           </div>
          
         </div>
-        
+         */}
 
       </div>
     );
