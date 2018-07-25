@@ -21,21 +21,26 @@ export default class PrivateArea extends React.Component {
     return (
       
       <div className="collapsible-menu">
-
+        
         <input type="checkbox" id="menu"/>
-        <label for="menu"><span>Click here</span> to acces you private info</label>
-
+        <label for="menu"><span>PRIVATE ZONE</span></label>
+        
         <div className="menu-content">
 
             <div className="gral-info-title">
               <h4>General Info</h4>
             </div>
 
-            <p>Check-In: ""</p>
-            <p>Check-Out: ""</p>
-            <p>Room Nr: ""</p>
-            <p>Rent: ""</p>
-            <p>Deposit: ""</p>
+            <div className="info-block">
+              <p>Check-In: 24/Jul/2018</p>
+              <p>Check-Out: 30/12/2018</p>
+            </div>
+
+            <div className="info-block">
+              <p>Room Nr: 8</p>
+              <p>Rent: 390 €/mo</p>
+              <p>Deposit: 780 €</p>
+            </div>
 
             <div className="gral-info-title">
               <h4>Additional charges</h4>
@@ -47,11 +52,11 @@ export default class PrivateArea extends React.Component {
            
 
             <div className="gral-info-title">
-              <h4>Your contract</h4>
+              <h4>Access your contract</h4>
             </div>
 
             <div className="contract-info-pic">
-              <img src={require('../../../assets/icons/contract.png')}></img>
+              <Link to="/contract"><img src={require('../../../assets/icons/contract.png')}></img></Link>
             </div>
 
           </div>

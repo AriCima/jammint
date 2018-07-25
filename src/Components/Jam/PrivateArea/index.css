@@ -1,27 +1,32 @@
 .collapsible-menu {
   background-color: white;
-  padding: 0px 30px;
   border-bottom: 3px solid #CDE700;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2); }
   .collapsible-menu #menu {
-    display: none; }
+    display: none;
+    background-color: black; }
     .collapsible-menu #menu:checked ~ .menu-content {
       max-height: 100%; }
   .collapsible-menu label {
+    margin: 0;
+    height: 35px;
     font-family: helvetica;
     font-size: 1rem;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    padding: 10px 0 10px 50px; }
+    width: 100%; }
     .collapsible-menu label span {
-      color: green; }
+      color: #32b496; }
+    .collapsible-menu label:hover {
+      background-color: #32b496;
+      color: white; }
+      .collapsible-menu label:hover span {
+        color: white; }
   .collapsible-menu .menu-content {
-    font-family: 'Oswald', sans-serif;
-    padding: 0 0 0 50px;
     max-height: 0;
     overflow: hidden;
-    font-family: 'Oswald', sans-serif;
-    padding: 0 0 0 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -31,9 +36,26 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-start; }
+      align-items: flex-start;
+      margin-left: 2%; }
       .collapsible-menu .menu-content .gral-info-title h4 {
         font-size: 1rem;
         font-weight: 550; }
-    .collapsible-menu .menu-content p {
-      font-size: 0.8rem; }
+    .collapsible-menu .menu-content .info-block {
+      width: 100%;
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start; }
+      .collapsible-menu .menu-content .info-block p {
+        font-size: 0.8rem;
+        font-weight: 550;
+        margin-left: 5%; }
+    .collapsible-menu .menu-content .contract-info-pic {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 5%; }
+      .collapsible-menu .menu-content .contract-info-pic img {
+        width: 100%; }

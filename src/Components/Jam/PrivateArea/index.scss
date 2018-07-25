@@ -1,11 +1,14 @@
 .collapsible-menu{
     background-color: rgb(255, 255, 255);
-    padding: 0px 30px;
     border-bottom: 3px solid #CDE700;
     box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 
+
+    
+
     #menu {
         display: none;
+        background-color: black;
 
         &:checked ~ .menu-content{
             max-height: 100%;
@@ -14,24 +17,34 @@
     }
 
     label{
+        margin: 0;
+        height: 35px;
         font-family: helvetica;
         font-size: 1rem;
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
-        padding: 10px 0 10px 50px;
+        width: 100%;
 
         span{
-            color: green;
+            color: rgb(50, 180, 150);
         }
-    }
 
+
+        &:hover{
+            background-color: rgb(50, 180, 150);
+            color: white;
+            span{
+                color: white;
+            }
+        }
+       
+    }
+    
     .menu-content {
-        font-family: 'Oswald', sans-serif; 
-        padding: 0 0 0 50px;
         max-height: 0;
         overflow: hidden;
-        font-family: 'Oswald', sans-serif; 
-        padding: 0 0 0 50px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -43,6 +56,8 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
+            margin-left: 2%;
+
 
             h4{
                 font-size: 1rem;
@@ -50,8 +65,31 @@
             }
         }
 
-        p{
-            font-size: 0.8rem;
+        .info-block{
+            width: 100%;
+            padding:0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            p{
+                font-size: 0.8rem;
+                font-weight: 550;
+                margin-left: 5%;
+            }
+        }
+
+        .contract-info-pic{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 5%;
+
+
+            img{
+                width: 100%;
+            }
         }
     }
    
