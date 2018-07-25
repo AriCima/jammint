@@ -9,7 +9,6 @@ import Login from '../Accounts/Login';
 import Register from '../Accounts/Register';
 import Home from '../Home';
 import Jam from '../Jam';
-import PrivateArea from '../Jam/PrivateArea';
 import Footer from '../Footer/';
 import DataService from '../../services/DataService';
 
@@ -104,8 +103,7 @@ class App extends Component {
                     <Route path="/landing" component={Home}/>
                     <Route path="/login" component={Login}/>
                     <Route path="/register" component={Register}/>
-                    <Route path="/jam/:s" exact render = {(props) => {return <Jam user={this.state.user}/>}}/>
-                    {/* <Route path="/priv-area" exact render = {(props) => {return <PrivateArea user={this.state.user}/>}}/> */}
+                    <Route path="/jam/:s" exact render = {(props) => {return <Jam user={this.state.user} jamId={props.match.params.s}/>}}/>
                     <Route path="/contract-info" exact render = {(props) => {return <ContractInfo user={this.state.user}/>}}/>
                     <Route path="/contract" exact render = {(props) => {return <Contract user={this.state.user}/>}}/>
                   </Switch>

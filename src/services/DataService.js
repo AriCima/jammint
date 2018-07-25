@@ -72,6 +72,43 @@ export default class DataService {
     }
 
 
+    static getJammers(jamId){
+
+        return new Promise((resolve, reject) => {
+
+            firebase.firestore().collection('users').where(`jams.${jamId}`,`==`, true).get() // Where me devuelve todos los users que tengan ese jamId
+            .then((result) => {
+                resolve(result.docs);   
+            })
+
+            .catch((error) => {
+               console.log('error: ', error)
+                // reject('Usuario no existe', error)
+
+            })
+            
+        });
+    }
+
+    static getBoardMessages(jamId){
+
+        return new Promise((resolve, reject) => {
+
+            firebase.firestore().collection('boardMessages').where(`jamId`,`==`, jamId).get() // Where me devuelve todos los mensajes que tengan ese jamId
+            .then((result) => {
+                resolve(result.docs);   
+            })
+
+            .catch((error) => {
+               console.log('error: ', error)
+                // reject('Usuario no existe', error)
+
+            })
+            
+        });
+    }
+
+
 
 
 }

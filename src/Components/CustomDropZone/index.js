@@ -78,7 +78,7 @@ export default class CustomDropZone extends React.Component {
                 {this.loading ? 
                     <p>Loading: {uploadProgress}%</p>
                     :
-                    error ? <p>{error}</p> : <p><br/><br/><br/><br/>DROP YOUR PASSPORT SCAN HERE</p>}
+                    error ? <p>{error}</p> : <p><br/><br/><br/><br/>{this.props.text}</p>}
                 </Dropzone>
             </div>
         );

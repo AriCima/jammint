@@ -45,7 +45,7 @@
         width: 50%;
         margin-left: 3%;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
 
         .nav-block{
@@ -67,6 +67,31 @@
 
                 a {
                     color: rgb(50, 180, 150);
+                }
+            }
+
+        }
+
+        .nav-block-jam{
+            margin-left: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h3{
+                text-decoration: none;
+                color:rgb(50, 180, 150);
+                transition: color 250ms linear;
+            }
+
+            &:first-child{
+                margin-left: 0px;
+            }
+
+            &:hover{
+
+                h3 {
+                    font-weight: 700;
                 }
             }
 

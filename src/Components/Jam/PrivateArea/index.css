@@ -1,14 +1,14 @@
 .collapsible-menu {
   background-color: white;
-  border-bottom: 3px solid #CDE700;
+  border-bottom: 3px solid #32b496;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2); }
   .collapsible-menu #menu {
-    display: none;
-    background-color: black; }
+    display: none; }
     .collapsible-menu #menu:checked ~ .menu-content {
       max-height: 100%; }
   .collapsible-menu label {
     margin: 0;
+    border-bottom: #32b496;
     height: 35px;
     font-family: helvetica;
     font-size: 1rem;
@@ -25,6 +25,7 @@
       .collapsible-menu label:hover span {
         color: white; }
   .collapsible-menu .menu-content {
+    padding-right: 5%;
     max-height: 0;
     overflow: hidden;
     display: flex;
@@ -40,22 +41,42 @@
       margin-left: 2%; }
       .collapsible-menu .menu-content .gral-info-title h4 {
         font-size: 1rem;
-        font-weight: 550; }
+        font-weight: 550;
+        color: #32b496; }
     .collapsible-menu .menu-content .info-block {
       width: 100%;
-      padding: 0 5%;
+      padding: 0;
+      margin: 15px 15px;
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start; }
+      justify-content: flex-start;
+      align-items: center; }
       .collapsible-menu .menu-content .info-block p {
-        font-size: 0.8rem;
-        font-weight: 550;
-        margin-left: 5%; }
-    .collapsible-menu .menu-content .contract-info-pic {
-      width: 20%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-bottom: 5%; }
-      .collapsible-menu .menu-content .contract-info-pic img {
-        width: 100%; }
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        font-weight: 550; }
+      .collapsible-menu .menu-content .info-block .info-box {
+        width: 120px;
+        margin-right: 10px;
+        padding: 10px;
+        background-color: rgba(50, 180, 150, 0.4);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; }
+        .collapsible-menu .menu-content .info-block .info-box p {
+          font-size: 1rem; }
+      .collapsible-menu .menu-content .info-block .contract-form-link {
+        margin-left: 15%;
+        width: 50%; }
+        .collapsible-menu .menu-content .info-block .contract-form-link a {
+          color: black;
+          font-size: 1rem; }
+      .collapsible-menu .menu-content .info-block .contract-info-pic {
+        width: 10%;
+        margin-left: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 5%; }
+        .collapsible-menu .menu-content .info-block .contract-info-pic img {
+          width: 100%; }

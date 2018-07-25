@@ -12,9 +12,7 @@ export default class Jam extends React.Component {
 
 
   }
-
   
-
   render() {
     console.log('props de Jam: ', this.props)
     return (
@@ -32,7 +30,7 @@ export default class Jam extends React.Component {
           </div>
 
           <div className="jam-jammers">
-            <Jammers user={this.props.user}/> 
+            <Jammers user={this.props.user} jamId={this.props.jamId}/> 
           </div>
           
         </div>

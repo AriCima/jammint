@@ -1,14 +1,10 @@
 .collapsible-menu{
     background-color: rgb(255, 255, 255);
-    border-bottom: 3px solid #CDE700;
-    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
-
-
-    
+    border-bottom: 3px solid rgb(50, 180, 150);
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.2); 
 
     #menu {
         display: none;
-        background-color: black;
 
         &:checked ~ .menu-content{
             max-height: 100%;
@@ -18,6 +14,7 @@
 
     label{
         margin: 0;
+        border-bottom: rgb(50, 180, 150);
         height: 35px;
         font-family: helvetica;
         font-size: 1rem;
@@ -43,6 +40,7 @@
     }
     
     .menu-content {
+        padding-right: 5%;
         max-height: 0;
         overflow: hidden;
         display: flex;
@@ -58,39 +56,71 @@
             align-items: flex-start;
             margin-left: 2%;
 
-
             h4{
                 font-size: 1rem;
                 font-weight: 550;
+                color: rgb(50, 180, 150);
             }
         }
 
         .info-block{
             width: 100%;
-            padding:0 5%;
+            padding: 0;
+            margin: 15px 15px;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            justify-content: flex-start;
+            align-items: center;
+
 
             p{
-                font-size: 0.8rem;
+                margin: 0;
+                padding: 0;
+                font-size: 1rem;
                 font-weight: 550;
-                margin-left: 5%;
+            }
+
+            .info-box{
+                width: 120px;
+                margin-right: 10px;
+                padding: 10px;
+                background-color: rgba(50, 180, 150, 0.4);
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                p{
+                    font-size: 1rem;
+                }
+
+            }
+
+            .contract-form-link{
+                margin-left: 15%;
+                width: 50%;
+
+                a{
+                    color: black;
+                    font-size: 1rem
+                }
+            }
+
+            .contract-info-pic{
+                width: 10%;
+                margin-left: 15%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 5%;
+
+
+                img{
+                    width: 100%;
+                }
+
+
             }
         }
 
-        .contract-info-pic{
-            width: 20%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 5%;
-
-
-            img{
-                width: 100%;
-            }
-        }
     }
    
 

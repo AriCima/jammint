@@ -81,11 +81,12 @@ export default class Register extends Component {
 
               let userToRegister = {
                 email   :this.state.email, 
-                jams    :[jam.id]
+                jams    :{[jam.id]: true}  // guardo los jams de cada user como objeto.
               }
 
               DataService.saveUserContactInfo(result.user.uid, userToRegister) //jams = array de todos las jams del usuario
-
+              this.props.history.push(`/jam/${jam.id}`)
+              
           },(error)=>{
               this.setState({registerError: error});
           });

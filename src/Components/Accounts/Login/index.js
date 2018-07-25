@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AuthService from '../../../services/AuthService'
+import DataService from '../../../services/DataService'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import './index.css';
@@ -7,58 +8,67 @@ import './index.css';
 class Login extends Component {
 
     constructor(props){
-      super(props);
+        super(props);
 
-      this.state = {
+        this.state = {
         email: '',
         password: '',
         emailError: false,
         loginError: ''
-      }
+        }
 
 
 
-      this.login = this.login.bind(this);
-      this.onChangeEmail = this.onChangeEmail.bind(this);
-      this.onChangePassword = this.onChangePassword.bind(this);
-  }
+        this.login = this.login.bind(this);
+        this.onChangeEmail = this.onChangeEmail.bind(this);
+        this.onChangePassword = this.onChangePassword.bind(this);
+    }
 
-  onChangeEmail(event){
-      this.setState({email: event.target.value})
-  }
+    onChangeEmail(event){
+        this.setState({email: event.target.value})
+    }
 
-  onChangePassword(event){
-      this.setState({password: event.target.value})
-  }
+    onChangePassword(event){
+        this.setState({password: event.target.value})
+    }
 
-  login(e){
-      e.preventDefault();
-      let error = false;
+    login(e){
+        e.preventDefault();
+        let error = false;
 
-      if(this.state.email == ''){
-          this.setState({emailError: true});
-          error = true;
-      }
+        if(this.state.email == ''){
+            this.setState({emailError: true});
+            error = true;
+        }
 
-      if(this.state.password == ''){
-          this.setState({passwordError: true});
-          error = true;
-      }
+        if(this.state.password == ''){
+            this.setState({passwordError: true});
+            error = true;
+        }
 
-      if(!error){
-          this.setState({loginError: ''});
+        if(!error){
+            this.setState({loginError: ''});
 
-          AuthService.login(this.state.email, this.state.password)
-            .then((result)=>{
+            AuthService.login(this.state.email, this.state.password)
+                .then((result)=>{
+                    console.log('Result de Login', result)
                 
-              this.props.history.push('/board')
-          },(error)=>{
-              this.setState({loginError: error});
-          });
-      }
-  }
+                DataService.getUserContactInfo(result.user.uid).then(
+                    (userData)=>{
+                    console.log('userData en App: ', userData);
+                    this.props.history.push(`/jam/${userData.jams[0]}`)
+                    }, 
+                    (errorMessage)=>{
+                    console.log(errorMessage)
+                    }
+                )
+            },(error)=>{
+                this.setState({loginError: error});
+            });
+        }
+    }
 
-  render(){
+    render(){
       const {emailError, loginError} = this.state;
       return (
 

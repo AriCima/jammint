@@ -24,8 +24,6 @@ export default class Contract extends Component {
     this.balanceRent = this.state.rent - this.state.payedRent;
     this.toBePayedAtCheckIn = this.balanceDeposit + this.balanceRent;
 
-    console.log('Contract props: ', this.props);
-
   }
 
 
@@ -57,7 +55,7 @@ export default class Contract extends Component {
           
           <div className="paragraph">
             <p>De una parte, D. Ariel Cima Porto, con NIF 48.109.279-H y de otra parte,
-              D./Dña. <span>{this.props.user.names}</span> <span>{this.props.user.surnames}</span> , NIF/pasaporte <span>{this.props.user.passport}</span>, teléfono <span>{this.props.user.tel}</span>, 
+              D./Dña. <span>{this.props.user.name}</span> <span>{this.props.user.surnames}</span> , NIF/pasaporte <span>{this.props.user.passport}</span>, teléfono <span>{this.props.user.tel}</span>, 
               dirección de correo electrónico <span>{this.props.user.email}</span>, 
               domicilio habitual en <span>{this.props.user.street}</span>  <span>{this.props.user.houseNr}</span>  <span>{this.props.user.floorNr}</span> <span>{this.props.user.doorNr}</span>, <span>{this.props.user.zipCode}</span> <span>{this.props.user.city}</span>, <span>{this.props.user.country}</span>, en adelante el ESTUDIANTE.
             </p><br/>
@@ -293,7 +291,7 @@ export default class Contract extends Component {
             </div>
             
             <div className="firma">
-              <p> EL ESTUDIANTE<span>{this.props.user.name}</span> <span>{this.props.user.surname}</span></p>
+              <p><span>{this.props.user.name}</span> <span>{this.props.user.surnames}</span></p>
             </div>
 
           </div>

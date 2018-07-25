@@ -10,57 +10,40 @@ export default class ContractInfo extends Component {
     super(props);
 
     this.state = {
-    //   userId       : this.props.user.id,
-    //   userPicture  : '',
-    //   name         : '',
-    //   surnames     : '',
-    //   passport     : '',
-    //   passportPic  : '',
-    //   street       : '',
-    //   houseNr      : '',
-    //   floorNr      : '',
-    //   doorNr       : '',
-    //   zipCode      : '',
-    //   city         : '',
-    //   country      : '',
-    //   tel          : '',
-    //   mobile       : '',
-    //   email        : '',
-    //   checkInDate  : '',
-    //   checkOutDate : '',
-    //   studies      : '',
-    //   school       : '',
-    //   roomNr       : '',
       datesError   : false,
       contentError : false,
     }
 
     this.updateFormInputElegant = this.updateFormInputElegant.bind(this);
     this.saveUserDatainFireStore =  this.saveUserDatainFireStore.bind(this);
-
-    console.log('Props del Contract Info: ', props)
   }
 
  
-  componentDidMount(){
-    // TRAERME LAS VARIABLES DEL getUserContactInfo para que el formulario quede relleno
-    DataService.getUserContactInfo(this.props.user.id).then(
-        (userData)=>{
-            console.log('userData en App: ', userData);
-            userData.id = this.props.user.uid;
-            this.setState({user : userData});
-        }, 
-        
-        (errorMessage)=>{
-            console.log(errorMessage)
-        }
-    )
+  componentDidUpdate(prevProps, prevState, snapshot){
+      if((this.props.user !== null && prevProps.user !== null && prevProps.user.id !== this.props.user.id)||
+    prevProps.user === null && this.props.user !== null){
+        // TRAERME LAS VARIABLES DEL getUserContactInfo para que el formulario quede relleno
+        DataService.getUserContactInfo(this.props.user.id).then(
+            (userData)=>{
+                //console.log('userData en App: ', userData);
+                userData.id = this.props.user.id;
+
+                this.setState({user : userData});
+            }, 
+            
+            (errorMessage)=>{
+                console.log(errorMessage)
+            }
+        )
+    }
   }
 
 
 
   updateFormInputElegant(field, value){
-    this.setState({[field]: value})
+      let user = this.state.user;
+      user[field] = value;
+      this.setState({user})
   };
   
 
@@ -85,22 +68,23 @@ export default class ContractInfo extends Component {
 
     // if(!error){
 
-        let userToSave = Object.assign({},this.state)
-        delete userToSave.userId,
-        delete userToSave.roomNr,
+        let userToSave = Object.assign({},this.state.user)
+        delete userToSave.id; // para no guardar ID dentro del usuario
 
-
-      DataService.saveUserContactInfo(this.state.userId, userToSave)
+      DataService.saveUserContactInfo(this.state.user.id, userToSave)
     //}
   }
 
   render(){
-    
+    console.log("props del user", this.props.user)
+    if(!this.state.user){
+        return <p>LOADING!</p>
+    }
     return (
 
         <div className="form-background">
 
-            <div class="form-style">
+            <div className="form-style">
                 <form onSubmit={this.saveUserDatainFireStore} >
                     <fieldset>
                         <legend><span className="number">1</span> Personal Info</legend>
@@ -110,13 +94,14 @@ export default class ContractInfo extends Component {
                             acceptedFiles="image/jpeg, image/png"
                             uploadFolder="userProfile"
                             name="Profile Picture"
+                            text="DROP YOUR PROFILE PICTURE HERE"
                         />  
 
                         <input 
                             type="text" 
                             name="field1" 
                             placeholder="Your Name *"
-                            value={this.state.name} 
+                            value={this.state.user.name} 
                             onChange={(e)=>{this.updateFormInputElegant('name', e.target.value)}}
                         />
                         
@@ -124,7 +109,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="Your Surnames *"
-                            value={this.state.surnames} 
+                            value={this.state.user.surnames} 
                             onChange={(e)=>{this.updateFormInputElegant('surnames', e.target.value)}}
                         />
 
@@ -132,7 +117,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="Your Passport *"
-                            value={this.state.passport} 
+                            value={this.state.user.passport} 
                             onChange={(e)=>{this.updateFormInputElegant('passport', e.target.value)}}
                         />
 
@@ -141,13 +126,14 @@ export default class ContractInfo extends Component {
                             acceptedFiles="image/jpeg, image/png"
                             uploadFolder="userProfile"
                             name="Passport Scan"
+                            text="DROP YOUR PASSPORT SCAN HERE"
                         />  
 
                         <input 
                             type="text" 
                             name="field2" 
                             placeholder="Your Email *"
-                            value={this.state.email} 
+                            value={this.state.user.email} 
                             onChange={(e)=>{this.updateFormInputElegant('email', e.target.value)}}
                         />
 
@@ -155,7 +141,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="Your Phone *"
-                            value={this.state.tel} 
+                            value={this.state.user.tel} 
                             onChange={(e)=>{this.updateFormInputElegant('tel', e.target.value)}}
                         />
 
@@ -163,7 +149,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="Your Mobile *"
-                            value={this.state.mobile} 
+                            value={this.state.user.mobile} 
                             onChange={(e)=>{this.updateFormInputElegant('mobile', e.target.value)}}
                         />
 
@@ -176,7 +162,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="Street *"
-                            value={this.state.street} 
+                            value={this.state.user.street} 
                             onChange={(e)=>{this.updateFormInputElegant('street', e.target.value)}}
                         />
 
@@ -184,7 +170,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="House Nr *"
-                            value={this.state.houseNr} 
+                            value={this.state.user.houseNr} 
                             onChange={(e)=>{this.updateFormInputElegant('houseNr', e.target.value)}}
                         />
 
@@ -192,7 +178,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="Floor *"
-                            value={this.state.floorNr} 
+                            value={this.state.user.floorNr} 
                             onChange={(e)=>{this.updateFormInputElegant('floorNr', e.target.value)}}
                         />
                         
@@ -200,7 +186,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="Door Nr *"
-                            value={this.state.doorNr} 
+                            value={this.state.user.doorNr} 
                             onChange={(e)=>{this.updateFormInputElegant('doorNr', e.target.value)}}
                         />
 
@@ -208,7 +194,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="Zip Code *"
-                            value={this.state.zipCode} 
+                            value={this.state.user.zipCode} 
                             onChange={(e)=>{this.updateFormInputElegant('zipCode', e.target.value)}}
                         />
 
@@ -216,7 +202,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="City *"
-                            value={this.state.city} 
+                            value={this.state.user.city} 
                             onChange={(e)=>{this.updateFormInputElegant('city', e.target.value)}}
                         />
 
@@ -224,7 +210,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="Country *"
-                            value={this.state.country} 
+                            value={this.state.user.country} 
                             onChange={(e)=>{this.updateFormInputElegant('country', e.target.value)}}
                         />
                     </fieldset>
@@ -236,7 +222,7 @@ export default class ContractInfo extends Component {
                             type="date" 
                             name="field1" 
                             placeholder="Check-In Date *"
-                            value={this.state.checkInDate} 
+                            value={this.state.user.checkInDate} 
                             onChange={(e)=>{this.updateFormInputElegant('checkInDate', e.target.value)}}
                         />
 
@@ -244,7 +230,7 @@ export default class ContractInfo extends Component {
                             type="date" 
                             name="field1" 
                             placeholder="Check-Out Date *"
-                            value={this.state.checkOutDate} 
+                            value={this.state.user.checkOutDate} 
                             onChange={(e)=>{this.updateFormInputElegant('checkOutDate', e.target.value)}}
                         />
 
@@ -252,7 +238,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="Studies / Internship in Barcelona *"
-                            value={this.state.studies} 
+                            value={this.state.user.studies} 
                             onChange={(e)=>{this.updateFormInputElegant('studies', e.target.value)}}
                         />
 
@@ -260,7 +246,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="School / Company in Barcelona *"
-                            value={this.state.school} 
+                            value={this.state.user.school} 
                             onChange={(e)=>{this.updateFormInputElegant('school', e.target.value)}}
                         />
 
@@ -268,7 +254,7 @@ export default class ContractInfo extends Component {
                             type="text" 
                             name="field1" 
                             placeholder="Room Nr *"
-                            value={this.state.roomNr} 
+                            value={this.state.user.roomNr} 
                             onChange={(e)=>{this.updateFormInputElegant('roomNr', e.target.value)}}
                         />
                     

@@ -13,8 +13,8 @@ export default class Board extends React.Component {
 
 
   render() {
-    console.log("render");
-    console.log('props de Board', this.props)
+    // console.log("render");
+    // console.log('props de Board', this.props)
     return (
       
 
@@ -24,7 +24,7 @@ export default class Board extends React.Component {
           <h4>PUBLIC BOARD</h4>
         </div>
 
-        <div className="board-content">
+        <div className="board-content" id="board-content">
 
 
         </div>

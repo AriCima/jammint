@@ -35,7 +35,7 @@
     width: 50%;
     margin-left: 3%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center; }
     .header .header-mid .nav-block {
       margin-left: 30px;
@@ -50,6 +50,19 @@
         margin-left: 0px; }
       .header .header-mid .nav-block:hover a {
         color: #32b496; }
+    .header .header-mid .nav-block-jam {
+      margin-left: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .header .header-mid .nav-block-jam h3 {
+        text-decoration: none;
+        color: #32b496;
+        transition: color 250ms linear; }
+      .header .header-mid .nav-block-jam:first-child {
+        margin-left: 0px; }
+      .header .header-mid .nav-block-jam:hover h3 {
+        font-weight: 700; }
   .header .header-right {
     height: 100%;
     width: 20%;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DataService from "../../../services/DataService";
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import './index.css';
@@ -8,20 +9,36 @@ export default class Jammers extends React.Component {
     super(props);
 
     this.state = {
-        users : this.props,
+        jammers: [],
     }
 
-    console.log("State en Jammers", this.state.users)
+    console.log("Props del jammers", this.props)
 
   }
 
+  componentDidMount(){
+  DataService.getJammers(this.props.jamId).then(
+      (jamsData)=>{
+       console.log("Jams Data: ", jamsData[0])
+       let jammersArr = jamsData.map((j) =>{
+        return Object.assign({id: j.id}, j.data())
+       }
+        
+    )
+       this.setState({ jammers: jammersArr})
+
+    }
+  )
+}
+
+
   _renderJammers(){
       
-    return this.state.users.map((user,i) => {
+    return this.state.jammers.map((user,i) => {
         return (
-  
-          <div className="room-cover" key={i}>
-  
+
+        <div className="room-cover" key={i}>
+
             <div className="user-pic">
                 <Link to={`/user/${user.id}`} > 
                     <img src={user.image_url}/>
@@ -32,29 +49,24 @@ export default class Jammers extends React.Component {
 
                 <div className="user-info-name">
 
-                    <p>{this.props.roomNr}</p>
+                    <p>{user.roomNr}</p>
 
                     <Link to={`/user/${user.id}`}> 
-                        <h4>{this.props.user.name}</h4>
+                        <h4>{user.name}</h4>
                     </Link>
 
                 </div>
 
                 <div className="user-info-studies">
                 
-                    <h4>{this.props.user.country}</h4>
-                    <p>{this.props.user.studies}</p>
+                    <h4>{user.country}</h4>
+                    <p>{user.studies}</p>
                 
                 </div>
 
-
-
-  
             </div>
-  
-            
-  
-          </div>
+
+        </div>
         )
     })
     } 
@@ -67,7 +79,7 @@ export default class Jammers extends React.Component {
             
             <div className="jammers">
 
-                {this._renderJammers}
+                {this._renderJammers()}
 
             </div>
 

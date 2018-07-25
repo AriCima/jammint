@@ -42,7 +42,7 @@ class Header extends Component {
                 <div className="header-mid">
 
                     <div className="nav-block">
-                        <Link to="/landing">Home</Link>
+                        {!this.props.user && <Link to="/landing">Home</Link>}
                     </div>
 
                     <div className="nav-block">
@@ -52,31 +52,20 @@ class Header extends Component {
                     <div className="nav-block">
                         {!this.props.user && <Link to="">Students</Link>} 
                     </div>
-                    
-                    <div className="nav-block">
-                        <Link to="/contract-info">Contract Info</Link>
+
+                    <div className="nav-block-jam">
+                        {this.props.user && <Link to="jam/VdEzQA4Ein9DMmsQmkth"><h3>AMPLE 53</h3></Link>} 
                     </div>
 
-                    <div className="nav-block">
-                        {this.props.user && <Link to="/jam/VdEzQA4Ein9DMmsQmkth">AMPLE 53</Link>} 
-                    </div>
-
-
-                    
-
-                    
                     
                 </div>
 
                 <div className="header-right">
 
-                    <div className="nav-block">
-                        {this.props.user && <Link to="/priv-area">Private Areat</Link>} 
-                    </div>
 
                     <div className="nav-block">
                         {this.props.user ? 
-                             <span><span>{this.props.user.email}</span>  /  <span onClick={this.signOut}><Link to="/landing1">Sign-out</Link></span></span> 
+                             <span><span>{this.props.user.name}</span>  /  <span onClick={this.signOut}><Link to="/landing">Sign-out</Link></span></span> 
                              :
                              <Link to="/login">Sign-In</Link>}
                     </div>
