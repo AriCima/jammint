@@ -14,7 +14,7 @@
 
     label{
         margin: 0;
-        border-bottom: rgb(50, 180, 150);
+        border-bottom: linear-gradient(to bottom right, rgb(0, 224, 255), rgb(12, 213, 180));;
         height: 35px;
         font-family: helvetica;
         font-size: 1rem;
@@ -30,7 +30,7 @@
 
 
         &:hover{
-            background-color: rgb(50, 180, 150);
+            background: linear-gradient(to top right,rgb(12, 213, 180),  rgb(0, 224, 255));;
             color: white;
             span{
                 color: white;

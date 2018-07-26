@@ -102,7 +102,7 @@ class Login extends Component {
 
 
                     <button>Sign-In</button>
-                    <p>Not a member?</p><button><Link to="/register">Register</Link></button>
+                    <p>Not a member?</p><Link to="/register">Register</Link>
                 </div>
               </form>
             </div>

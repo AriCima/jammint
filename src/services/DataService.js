@@ -32,8 +32,6 @@ export default class DataService {
     static saveUserContactInfo(userId, userToSave)
         {  //registro en Firebase
 
-        
-
         return new Promise((resolve, reject) => {
 
             firebase.firestore().collection('users').doc(userId).set(userToSave)
@@ -46,6 +44,26 @@ export default class DataService {
             .catch((error) => {
                 var errorCode = error.code;
                 console.log('User NOT added: ', errorCode);
+                var errorMessage = error.message;
+                
+            })
+            
+        });
+    }
+
+    static saveNewMessage (messageId, messageToSave){
+        return new Promise((resolve, reject) => {
+
+            firebase.firestore().collection('boardMessages').doc(messageId).set(messageToSave)
+            .then((result) => {
+                
+                console.log("New Board Message succesfully saved !")
+                resolve(result);
+            })
+
+            .catch((error) => {
+                var errorCode = error.code;
+                console.log('Message NOT added: ', errorCode);
                 var errorMessage = error.message;
                 
             })
@@ -70,8 +88,6 @@ export default class DataService {
             
         });
     }
-
-
     static getJammers(jamId){
 
         return new Promise((resolve, reject) => {
@@ -91,24 +107,20 @@ export default class DataService {
     }
 
     static getBoardMessages(jamId){
-
+        
         return new Promise((resolve, reject) => {
+            let boardMessagesResult = [];
 
-            firebase.firestore().collection('boardMessages').where(`jamId`,`==`, jamId).orderBy("fecha").get() // Where me devuelve todos los mensajes que tengan ese jamId
-            .then((result) => {
-                resolve(result.docs);   
-            })
-
-            .catch((error) => {
-               console.log('error: ', error)
-                // reject('Usuario no existe', error)
-
-            })
-            
-        });
+            firebase.firestore().collection('boardMessages').where(`jamId`,`==`, jamId).orderBy("date").get()  // Where me devuelve todos los mensajes que tengan ese jamId
+                .then(docs => {
+                    console.log("Mensajes del Board devueltos");
+                    docs.forEach((d) => {
+                        boardMessagesResult.push(d.data());
+                    })
+                    resolve(boardMessagesResult);
+                })
+                .catch(error => reject(error))
+        })
     }
-
-
-
 
 }

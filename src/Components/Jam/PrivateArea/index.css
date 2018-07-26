@@ -8,7 +8,7 @@
       max-height: 100%; }
   .collapsible-menu label {
     margin: 0;
-    border-bottom: #32b496;
+    border-bottom: linear-gradient(to bottom right, #00e0ff, #0cd5b4);
     height: 35px;
     font-family: helvetica;
     font-size: 1rem;
@@ -20,7 +20,7 @@
     .collapsible-menu label span {
       color: #32b496; }
     .collapsible-menu label:hover {
-      background-color: #32b496;
+      background: linear-gradient(to top right, #0cd5b4, #00e0ff);
       color: white; }
       .collapsible-menu label:hover span {
         color: white; }

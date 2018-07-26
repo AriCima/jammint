@@ -17,19 +17,19 @@ export default class Jammers extends React.Component {
   }
 
   componentDidMount(){
-  DataService.getJammers(this.props.jamId).then(
-      (jamsData)=>{
-       console.log("Jams Data: ", jamsData[0])
-       let jammersArr = jamsData.map((j) =>{
-        return Object.assign({id: j.id}, j.data())
-       }
-        
-    )
-       this.setState({ jammers: jammersArr})
+    DataService.getJammers(this.props.jamId).then(
+        (jamsData)=>{
+        console.log("Jams Data: ", jamsData[0])
+        let jammersArr = jamsData.map((j) =>{
+            return Object.assign({id: j.id}, j.data())
+        }
+            
+        )
+        this.setState({ jammers: jammersArr})
 
-    }
-  )
-}
+        }
+    )
+  }
 
 
   _renderJammers(){
@@ -40,10 +40,8 @@ export default class Jammers extends React.Component {
         <Link className="room-cover" key={i} to={`/user/${user.id}`}> 
             
 
-                <div className="user-pic">
-                    
-                        <img src={require("../../../assets/icons/user.png")}/>
-                    
+                <div className="user-pic"> 
+                    <img src={require("../../../assets/icons/user.png")}/>
                 </div>
 
                 <div className="user-info">

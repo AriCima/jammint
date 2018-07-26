@@ -6,4 +6,5 @@
   justify-content: flex-start;
   align-items: center;
   background-color: #00dab9;
-  color: white; }
+  color: white;
+  background: linear-gradient(to bottom right, #00e0ff, #0cd5b4); }

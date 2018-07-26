@@ -20,7 +20,7 @@ export default class Jam extends React.Component {
       <div className="jam">
 
         <div className="jam-board">
-          <Board user={this.props.user}/>
+          <Board user={this.props.user} jamId={this.props.jamId}/>
         </div>
 
         <div className="jam-right">

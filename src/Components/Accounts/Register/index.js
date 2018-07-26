@@ -52,7 +52,6 @@ export default class Register extends Component {
       this.setState({emailError: true});
       error = true;
     }
-
     if(this.state.password == ''){
       this.setState({passwordError: true});
       error = true;
@@ -67,7 +66,6 @@ export default class Register extends Component {
       this.setState({jamCodeError: true});
       error = true;
     }    
-
     if(!error){
 
 

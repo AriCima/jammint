@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: flex-start;
     border: 1px solid #32b496;
-    background-color: #32b496; }
+    background: linear-gradient(to bottom right, #00e0ff, #0cd5b4); }
     .board .board-title h4 {
       font-family: helvetica;
       font-size: 1.2rem;
