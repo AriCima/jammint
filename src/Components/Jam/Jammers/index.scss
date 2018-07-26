@@ -16,10 +16,20 @@
     justify-content: flex-start;
     align-items: flex-start;
     border: 1px solid rgba(0, 218, 185,0.8);
-    border-radius: 5%;
-    background-color: blue;
+    background-color: rgba(256, 256, 256, 0.3);
+    border-radius: 3%;
 
+    a{
+        text-decoration: none;
+    }
 
+    &:hover{
+        border: 3px solid rgba(0, 218, 185,0.8);
+        background-color: rgba(256, 256, 256, 0.7);
+        a{
+            text-decoration: none;
+        }
+    }
 
     .user-pic{
         height: 80px;
@@ -27,12 +37,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: yellow;
 
         img{
             
             width: 100%;
             height: 100%;
+            border-radius: 50%;
         }
 
     }
@@ -40,11 +50,11 @@
     .user-info{
         width: 85%;
         height: 100%;
+        margin-left: 20px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        background-color: red;
 
         .user-info-up{
             height: 50px;
@@ -53,15 +63,15 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            background-color: gray;
+            border-bottom: 1px solid rgba(256, 256, 256, 0.7);
 
 
             .roomNr{
-                width: 30%;
-                background-color: lightgray;
+                width: 65px;;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                text-decoration: none;
 
                 p{
                     font-family: Helvetica, sans-serif;
@@ -75,12 +85,12 @@
             }
 
             .user-info-detail{
-                width: 100%;
-                margin-left: 2%;
+                width: auto;
+                padding: 5px 15px;
+                margin-left: 0px;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
-                background-color: pink;
 
                 h4{
                     padding: 0;
@@ -88,6 +98,7 @@
                     font-size: 1rem;
                     font-weight: bold;
                     margin-left: 15px;
+                    color: black;
                 }
             }
 
@@ -100,21 +111,50 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            background-color: orange;
 
-            .user-info-detail{
-                margin-left: 2%;
+            .user-info-studies{
+                width: auto;
+                margin-left: 15%;
                 display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                background-color: pink;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
 
-                h4{
+
+                a{
+                    text-decoration: none;
+                }
+
+                p{
                     padding: 0;
                     font-family: Helvetica, sans-serif;
                     font-size: 1rem;
-                    font-weight: bold;
+                    margin: 0 0 0 15px;
+                    color: black;
+
+                    a{
+                        text-decoration: none;
+                    }
+                }
+
+
+            }
+
+
+            .user-info-school{
+                width: auto;
+                margin-left: 5%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                p{
+                    padding: 0;
+                    font-family: Helvetica, sans-serif;
+                    font-size: 1rem;
                     margin-left: 15px;
+                    color: black;
+                    margin: 0 0 0 15px;
                 }
             }
         }

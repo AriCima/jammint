@@ -42,7 +42,7 @@ export default class Jammers extends React.Component {
 
                 <div className="user-pic">
                     
-                        <img src={user.image_url}/>
+                        <img src={require("../../../assets/icons/user.png")}/>
                     
                 </div>
 
@@ -67,11 +67,11 @@ export default class Jammers extends React.Component {
 
                     <div className="user-info-down">  
                     
-                        <div className="user-info-detail">                 
+                        <div className="user-info-studies">                 
                             <p>{user.studies}</p>
                         </div>
 
-                        <div className="user-info-detail">
+                        <div className="user-info-school">
                             <p>{user.school}</p>
                         </div>
                     
