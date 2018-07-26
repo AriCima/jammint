@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import Collapsible from 'react-collapsible';
 import Board from "./Board";
 import Jammers from './Jammers';
 import PrivateArea from './PrivateArea';

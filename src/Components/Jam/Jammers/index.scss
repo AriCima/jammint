@@ -4,29 +4,33 @@
     height: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .room-cover{
+    height: 80px;
     width: 95%;
-    margin: 5px 2px;
+    margin: 10px 5px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     border: 1px solid rgba(0, 218, 185,0.8);
-    border-radius: 25%;
+    border-radius: 5%;
     background-color: blue;
 
+
+
     .user-pic{
-        width: 15%;
+        height: 80px;
+        width: 80px;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: yellow;
 
         img{
-            border-radius: 50%;
+            
             width: 100%;
             height: 100%;
         }
@@ -35,37 +39,84 @@
 
     .user-info{
         width: 85%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         background-color: red;
 
-        .user-info-name{
+        .user-info-up{
+            height: 50px;
             width: 100%;
             display: flex;
+            flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            background-color: green;
+            background-color: gray;
 
-            p{
-                font-family: Helvetica, sans-serif;
-                font-size: 0.8 rem;
+
+            .roomNr{
+                width: 30%;
+                background-color: lightgray;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                p{
+                    font-family: Helvetica, sans-serif;
+                    font-size: 0.8rem;
+                    color: black;
+                    padding: 0;
+                    text-decoration: none;
+
+                }
+
             }
 
-            h4{
-                font-family: Helvetica, sans-serif;
-                font-size: 1 rem;
-                font-weight: bold,
+            .user-info-detail{
+                width: 100%;
+                margin-left: 2%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                background-color: pink;
+
+                h4{
+                    padding: 0;
+                    font-family: Helvetica, sans-serif;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    margin-left: 15px;
+                }
             }
+
         }
 
-        .user-info-studies{
+        .user-info-down{
+            height: 30px;
             width: 100%;
             display: flex;
+            flex-direction: row;
             justify-content: flex-start;
             align-items: center;
             background-color: orange;
+
+            .user-info-detail{
+                margin-left: 2%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                background-color: pink;
+
+                h4{
+                    padding: 0;
+                    font-family: Helvetica, sans-serif;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    margin-left: 15px;
+                }
+            }
         }
 
 

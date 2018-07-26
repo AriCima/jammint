@@ -94,7 +94,7 @@ export default class DataService {
 
         return new Promise((resolve, reject) => {
 
-            firebase.firestore().collection('boardMessages').where(`jamId`,`==`, jamId).get() // Where me devuelve todos los mensajes que tengan ese jamId
+            firebase.firestore().collection('boardMessages').where(`jamId`,`==`, jamId).orderBy("fecha").get() // Where me devuelve todos los mensajes que tengan ese jamId
             .then((result) => {
                 resolve(result.docs);   
             })

@@ -37,36 +37,49 @@ export default class Jammers extends React.Component {
     return this.state.jammers.map((user,i) => {
         return (
 
-        <div className="room-cover" key={i}>
+        <Link className="room-cover" key={i} to={`/user/${user.id}`}> 
+            
 
-            <div className="user-pic">
-                <Link to={`/user/${user.id}`} > 
-                    <img src={user.image_url}/>
-                </Link>
-            </div>
+                <div className="user-pic">
+                    
+                        <img src={user.image_url}/>
+                    
+                </div>
 
-            <div className="user-info">
+                <div className="user-info">
 
-                <div className="user-info-name">
+                    <div className="user-info-up">
 
-                    <p>{user.roomNr}</p>
+                        <div className="roomNr">
+                            <p>Room: {user.roomNr}</p>
+                        </div>
 
-                    <Link to={`/user/${user.id}`}> 
-                        <h4>{user.name}</h4>
-                    </Link>
+                        <div className="user-info-detail">
+                            <h4>{user.name}</h4>                          
+                        </div>
+
+                        <div className="user-info-detail">
+                            <h4>{user.country}</h4>
+                        </div>
+                        
+                    </div>
+
+
+                    <div className="user-info-down">  
+                    
+                        <div className="user-info-detail">                 
+                            <p>{user.studies}</p>
+                        </div>
+
+                        <div className="user-info-detail">
+                            <p>{user.school}</p>
+                        </div>
+                    
+                    </div>
 
                 </div>
 
-                <div className="user-info-studies">
-                
-                    <h4>{user.country}</h4>
-                    <p>{user.studies}</p>
-                
-                </div>
-
-            </div>
-
-        </div>
+            </Link>
         )
     })
     } 
