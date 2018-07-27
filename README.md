@@ -1,6 +1,6 @@
 ## JAMMINT
 
-![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/images/jammint-logo.png)
+![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/jammint.jpg)
 
 #### This app eases the communication between tenants and landlords. 
 
