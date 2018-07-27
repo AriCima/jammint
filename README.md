@@ -9,7 +9,7 @@ Students coming from abroad to study in Barcelona.
 
 ### TECHNOLOGIES
 
-![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/images/adventure1.jpg)
+![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/technologies.jpg)
 
 ### Functional Description
 This app allows students that have just make a booking for a room in a flat in Barcelona to get in contact with it's landlord as well as with the other students that will be hosted in the same flat. In the other side it automates the landlord's managemente processes (contracts drafting, charges and payments control)
