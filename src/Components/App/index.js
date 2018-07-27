@@ -33,7 +33,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// optional cofiguration
+// Alerts optional cofiguration
 const options = {
   position: 'top right',
   timeout: 5000,

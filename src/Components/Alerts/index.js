@@ -3,6 +3,8 @@ import { render } from 'react-dom'
 import { Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
 import App from './App'
+import Register from './Register'
+import Login from './Login'
  
 // optional cofiguration
 const options = {

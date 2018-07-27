@@ -67,10 +67,10 @@ export default class Board extends React.Component {
 
         <div className="board-content" id="board-content">
          
-         {/* {this.state.messages.map((messageItem, i) => {
-                const jammer = this.state.jammers.filter((j)=>{j.id == messageItem.userId})[0]
-                return <div key={i}>{messageItem.message}</div>
-              })} */}
+         {/* {this.state.messagesInBoard.map((messageItem, i) => {
+                const jammer = this.state.messagesInBoard.userId.filter((j)=>{j.id == messageItem.userId})[0]
+                return <div key={i}>{messageItem.text}</div>
+          })} */}
 
         </div>
       

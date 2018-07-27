@@ -23,7 +23,7 @@ const Footer = function(props){
 
             <div className="footer">
 
-                <h1>THIS IS MY FOOTER</h1>
+                <h1>THIS IS (... will be!) MY FOOTER</h1>
                     
             </div>
 

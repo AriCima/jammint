@@ -37,14 +37,25 @@ body {
         font-size: 150px;
       }
 
+      .form-error{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white
+      }
+
       input{
         display:block;
         width:300px;
         margin:20px auto;
         padding:15px;
         background:rgba(0,0,0,0.2);
-        color:#fff;
         border:0;
+
+        &::placeholder{
+          color:rgba(255,255,255,0.8)
+        }
 
         &:focus{
           outline:none;

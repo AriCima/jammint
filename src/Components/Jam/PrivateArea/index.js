@@ -75,7 +75,7 @@ export default class PrivateArea extends React.Component {
             <div className="info-block ">
 
               <div className="contract-info-pic">
-                <Link to="/contract"><img src={require('../../../assets/icons/contract.png')}></img></Link>
+                <Link to="/contract"><img src={require('../../../assets/icons/contract.png')} target="_blank"></img></Link>
               </div>
 
               <div className="contract-form-link">

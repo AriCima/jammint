@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AuthService from '../../../services/AuthService'
 import DataService from '../../../services/DataService'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { has } from 'lodash';
 
 import './index.css';
 
@@ -56,7 +57,8 @@ class Login extends Component {
                 DataService.getUserContactInfo(result.user.uid).then(
                     (userData)=>{
                     console.log('userData en App: ', userData);
-                    this.props.history.push(`/jam/${userData.jams[0]}`)
+
+                    this.props.history.push(`/jam/${Object.keys(userData.jams)[0]}`)
                     }, 
                     (errorMessage)=>{
                     console.log(errorMessage)
@@ -100,9 +102,13 @@ class Login extends Component {
                       {loginError && <span>{loginError}</span>}
                   </div>
 
-
-                    <button>Sign-In</button>
-                    <p>Not a member?</p><Link to="/register">Register</Link>
+                    <div className="sendArea">
+                        <button>Sign-In</button>
+                        <p>Not a member?</p>
+                        <div className="sendArea-register">
+                            <Link to="/register"><p>Register</p></Link>
+                        </div>
+                    </div>
                 </div>
               </form>
             </div>
@@ -112,16 +118,3 @@ class Login extends Component {
 }
 
 export default Login;
-
-{/* <div class="inner-container">
-   
-    <div class="box">
-
-      <h1>Login</h1>
-      <input type="text" placeholder="Username"/>
-      <input type="text" placeholder="Password"/>
-      <button>Login</button>
-      <p>Not a member? <span>Sign Up</span></p>
-
-    </div>
-  </div> */}

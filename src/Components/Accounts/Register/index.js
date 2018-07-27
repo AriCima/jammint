@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
+import { withAlert } from 'react-alert';
 
 
 import './index.css';
 import AuthService from '../../../services/AuthService';
 import DataService from '../../../services/DataService';
+
 
 export default class Register extends Component {
   constructor(props){
@@ -75,7 +77,7 @@ export default class Register extends Component {
           
           AuthService.register(this.state.email, this.state.password)
             .then((result)=>{
-              alert("Welcome to Ample 53");
+              this.props.alert.succes("Welcome to Ample 53");
 
               let userToRegister = {
                 email   :this.state.email, 
@@ -119,7 +121,7 @@ export default class Register extends Component {
                 onChange={this.onChangeEmail}
               />
 
-              {emailError && <span className="form-error">This is mandatory</span>}
+              {emailError && this.props.alert.error("Email is mandatory")}
 
               <input 
                 type="password" 
@@ -135,7 +137,7 @@ export default class Register extends Component {
                 onChange={this.onChangePasswordConfirm}
               />
             
-                {passwordError && <span className="form-error">Los passwords son distintos</span>}
+                {passwordError && alert("Passwords don't match!")}
 
               <input 
                 type="textd" 
@@ -144,7 +146,7 @@ export default class Register extends Component {
                 onChange={ (event) => { this.setState({jamCode: event.target.value}) } }
               />
             
-                {passwordError && <span className="form-error">Los passwords son distintos</span>}
+                {this.state.jamCodeError && this.props.alert.error(`The JamCode ${this.state.jamCode} doesn't exist`)}
 
               <div className="form-item">
                 <button type="submit">Register</button>
@@ -154,6 +156,7 @@ export default class Register extends Component {
           </form>
         </div>
       </div>
+
     );
   }
 

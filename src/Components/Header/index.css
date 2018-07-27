@@ -35,7 +35,7 @@
     width: 50%;
     margin-left: 3%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center; }
     .header .header-mid .nav-block {
       margin-left: 30px;
