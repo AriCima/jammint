@@ -14,7 +14,7 @@ After registering, the student checks in into a what we call *Jam* which is the 
 
 ### UML Diagram
 
-![alt text](https://raw.githubusercontent.com/aricima/jammint/src/assets/images/adventure1.jpg)
+![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/images/adventure1.jpg)
 
 ![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
 
