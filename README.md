@@ -9,7 +9,7 @@ Students coming from abroad to study in Barcelona.
 
 ### TECHNOLOGIES
 
-![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/technologies.jpg)
+![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/technologies.png)
 
 ### Functional Description
 This app allows students that have just make a booking for a room in a flat in Barcelona to get in contact with it's landlord as well as with the other students that will be hosted in the same flat. In the other side it automates the landlord's managemente processes (contracts drafting, charges and payments control)
@@ -26,7 +26,6 @@ User interaction with Jammint:
 ![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/umlDiagram.png)
 
 
-
 ### Technical Description
 
 ###Data Model
@@ -37,15 +36,15 @@ In the diagram below we can see the schemas used, its properties and how are the
 
 ### Block Model
 
-![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/blockModel.jpg)
+![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/blockModel.png)
 
 ## DESIGN (screenshots)
 
 ### Landing Page
-![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/Landing.jpg)
+![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/Landing.png)
 
 ### Landing page / Landlords info
-![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/Landlord.jpg)
+![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/Landlord.png)
 
 ### Sign-in / Register
 ![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/signIn.jpg)
@@ -54,7 +53,7 @@ In the diagram below we can see the schemas used, its properties and how are the
 ![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/Jam.jpg)
 
 ### Jam (Board + Private Zone)
-![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/PrivZone.jpg)
+![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/PrivZone.png)
 
 ### Contract Info
-![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/ContractInfo.jpg)
+![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/ContractInfo.png)
