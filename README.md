@@ -47,10 +47,10 @@ In the diagram below we can see the schemas used, its properties and how are the
 ![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/Landlord.png)
 
 ### Sign-in / Register
-![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/signIn.jpg)
+![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/signin.png)
 
 ### Jam (Board + Jammers)
-![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/Jam.jpg)
+![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/Jam.png)
 
 ### Jam (Board + Private Zone)
 ![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/readMe/PrivZone.png)
