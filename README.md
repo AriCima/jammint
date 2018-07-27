@@ -21,6 +21,8 @@ After registering, the student checks in into a what we call *Jam* which is the 
 
 ### UML Diagram
 
+User interaction with Jammint:
+
 ![alt text](https://raw.githubusercontent.com/aricima/jammint/master/src/assets/images/umlDiagram.png)
 
 
